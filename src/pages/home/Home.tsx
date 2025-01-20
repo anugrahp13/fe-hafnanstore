@@ -24,7 +24,7 @@ export const Home = () => {
       <section className="dark:bg-dark">
         <div className="relative">
           <img
-            src="/image/banner/banner4.png"
+            src="/image/banner/banner.png"
             alt="Banner Hafnan Store"
             className="w-full pt-[3.8rem] h-[41rem] object-cover"
           />
