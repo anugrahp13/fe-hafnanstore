@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.sidebar {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.sidebar-open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #14b8a6;
+    border-radius: 10px;
+    border: 2px solid #282c34;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    /* background-color: #282c34; */
+    border-radius: 10px;
+  }
+}
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--underline-color);
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-animation.active::after {
+  width: 100%;
+}
+
+:root {
+  --underline-color: #1F509A;
+}
+
+.dark :root {
+  --underline-color: white;
+}
