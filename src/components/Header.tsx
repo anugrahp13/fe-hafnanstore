@@ -71,7 +71,7 @@ const Header = () => {
         className={`fixed top-0 left-0 w-full z-10 transition-all duration-300 ${
           isScrolled
             ? "bg-white bg-opacity-80 backdrop-blur-sm shadow-lg dark:bg-gray-900 dark:bg-opacity-50"
-            : "bg-transparent"
+            : "bg-white"
         }`}
       >
         <div className="container flex justify-between mx-auto px-4 lg:max-w-7xl">
@@ -95,23 +95,23 @@ const Header = () => {
             <div className="hidden md:inline-flex gap-4">
               <Link
                 to="/"
-                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-teal-300 underline-animation ${
+                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-slate-300 underline-animation ${
                   isActiveLink("/") ? "active" : ""
                 }`}
               >
                 Home
               </Link>
               <Link
-                to="/product"
-                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-teal-300 underline-animation ${
-                  isActiveLink("/product") ? "active" : ""
+                to="/products"
+                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-slate-300 underline-animation ${
+                  isActiveLink("/products") ? "active" : ""
                 }`}
               >
-                Product
+                Products
               </Link>
               <Link
                 to="/about"
-                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-teal-300 underline-animation ${
+                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-slate-300 underline-animation ${
                   isActiveLink("/about") ? "active" : ""
                 }`}
               >
@@ -119,7 +119,7 @@ const Header = () => {
               </Link>
               <Link
                 to="/contact"
-                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-teal-300 underline-animation ${
+                className={`hidden md:block lg:inline-flex items-center gap-1 px-3 py-2 text-sm font-bold  text-slate-500 active:text-slate-800 hover:text-slate-800 dark:text-white hover:dark:text-slate-300 underline-animation ${
                   isActiveLink("/contact") ? "active" : ""
                 }`}
               >
@@ -157,7 +157,7 @@ const Header = () => {
             <button>
               <IoClose
                 onClick={() => setIsSidebarMenuOpen(false)}
-                className="h-8 w-8 scale-75 text-slate-800"
+                className="h-8 w-8 scale-75 text-slate-800 dark:text-white"
               />
             </button>
           </div>
