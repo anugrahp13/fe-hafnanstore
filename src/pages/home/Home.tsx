@@ -15,31 +15,41 @@ export const Home = () => {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>Anugrah Prastyo - Frontend Web Developer</title>
+          <title>
+            Hafnan Store – Solusi Praktis untuk Kebutuhan Harian Anda
+          </title>
         </Helmet>
       </HelmetProvider>
       {/* Hero Section */}
       <section className="dark:bg-dark">
-        <div className="container mx-auto px-4 py-48 lg:max-w-7xl flex items-center justify-center">
-          <div className="w-full text-center relative grid gap-4">
-            <h1 className="text-lg font-semibold text-slate-400 dark:text-slate-200">
-              Hi 👋, Selamat Datang di Hafnan Store
-              <span className="block font-bold text-dark mt-2 text-4xl lg:text-5xl dark:text-white">
-                Belanja Puas dengan Harga Pass
-              </span>
-            </h1>
-            <h2 className="font-semibold text-primary text-base lg:text-lg dark:text-sky-300">
-              Kunjungi semua produk kami dan dapatkan dengan harga yang murah
-              hanya di Hafnan Store
-            </h2>
-            <div className="flex justify-center items-center text-sm gap-4">
-              <Button
-                to="/contact"
-                variant="secondary"
-                text="Lihat Produk"
-                icon={AiOutlineProduct}
-                iconClassName="w-[1.10rem] h-[1.10rem]"
-              />
+        <div className="relative">
+          <img
+            src="/image/banner/banner4.png"
+            alt="Banner Hafnan Store"
+            className="w-full pt-[3.8rem] h-[41rem] object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="container mx-auto px-4 py-48 lg:max-w-7xl flex items-center justify-center absolute inset-0">
+            <div className="w-full md:text-left text-center relative grid gap-4">
+              <h1 className="text-xl font-semibold text-white dark:text-slate-200 leading-[4rem]">
+                Hi 👋, Selamat Datang di Hafnan Store
+                <span className="block font-bold text-white mt-2 text-4xl lg:text-5xl dark:text-white">
+                  Solusi Praktis Untuk <br />
+                  Kebutuhan Harian Anda
+                </span>
+              </h1>
+              <h2 className="text-white text-base lg:text-lg dark:text-sky-300">
+                Kunjungi semua produk kami dan dapatkan dengan harga yang murah
+              </h2>
+              <div className="flex md:justify-start justify-center items-center text-sm gap-4">
+                <Button
+                  to="/contact"
+                  variant="secondary"
+                  text="Lihat Produk"
+                  icon={AiOutlineProduct}
+                  iconClassName="w-[1.10rem] h-[1.10rem]"
+                />
+              </div>
             </div>
           </div>
         </div>
