@@ -5,7 +5,7 @@ export interface ButtonProps {
   to?: string;
   text: string;
   icon?: IconType; // Menggunakan IconType untuk ikon dari react-icons
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "tertiary";
   className?: string;
   iconClassName?: string;
 }
