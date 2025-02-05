@@ -17,6 +17,8 @@ export const Button: React.FC<ButtonProps> = ({
       "border-2 border-slate-800 dark:border-white border-dashed dark:border-white hover:dark:border-primary text-slate-800 hover:border-primary hover:text-white dark:text-white hover:bg-primary",
     secondary:
       "border-2 bg-primary border-primary text-white hover:border-primary hover:text-white hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out",
+    tertiary:
+      "border-2 bg-whatapp border-whatapp text-white hover:border-whatapp hover:text-white hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out",
   };
 
   // Jika `href` adalah external link
@@ -28,8 +30,8 @@ export const Button: React.FC<ButtonProps> = ({
         rel="noopener noreferrer"
         className={`${defaultStyle} ${variants[variant]} ${className}`}
       >
-        {text}
         {Icon && <Icon className={iconClassName} />}
+        {text}
       </a>
     );
   }
@@ -41,8 +43,8 @@ export const Button: React.FC<ButtonProps> = ({
         to={to}
         className={`${defaultStyle} ${variants[variant]} ${className}`}
       >
-        {text}
         {Icon && <Icon className={iconClassName} />}
+        {text}
       </Link>
     );
   }
