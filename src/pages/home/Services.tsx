@@ -22,10 +22,10 @@ export const Services: React.FC<ServicesType> = ({ services }) => {
                       <Icon className="w-7 h-7" />
                     </div>
                     <div className="grid gap-1 text-center md:text-left">
-                      <span className="font-bold text-2xl text-primary">
+                      <span className="font-bold text-2xl text-primary dark:text-white">
                         {service.title}
                       </span>
-                      <span className="text-sm text-dark">
+                      <span className="text-sm text-dark dark:text-slate-300">
                         {service.description}
                       </span>
                     </div>
