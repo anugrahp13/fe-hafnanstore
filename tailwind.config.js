@@ -10,6 +10,7 @@ export default {
       colors: {
         primary: "#1F509A",
         secondary: "#64748b",
+        whatapp: "#25D366",
         dark: "#0f172a",
         code: "#282c34",
       },
@@ -21,5 +22,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };
