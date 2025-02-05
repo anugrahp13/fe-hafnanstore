@@ -71,7 +71,7 @@ const Header = () => {
         className={`fixed top-0 left-0 w-full z-10 transition-all duration-300 ${
           isScrolled
             ? "bg-white bg-opacity-80 backdrop-blur-sm shadow-lg dark:bg-gray-900 dark:bg-opacity-50"
-            : "bg-white"
+            : "bg-white dark:bg-dark"
         }`}
       >
         <div className="container flex justify-between mx-auto px-4 lg:max-w-7xl">
@@ -149,7 +149,7 @@ const Header = () => {
               className="font-bold text-lg text-primary py-3 dark:text-white"
             >
               <img
-                src="/image/avatar/logo-hafnanstore.jpeg"
+                src="/image/avatar/hafnanmart.png"
                 className="border border-slate-700 rounded-full w-9 h-9"
                 data-size="w-10 h-10"
               />
