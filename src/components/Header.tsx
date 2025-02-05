@@ -81,8 +81,8 @@ const Header = () => {
               className="p-1 font-bold text-lg text-slate-900 py-3 dark:text-white"
             >
               <img
-                src="/image/avatar/logo-hafnanstore.jpeg"
-                className="border border-slate-700 rounded-full w-9 h-9"
+                src="/image/avatar/hafnanmart.png"
+                className="border border-white rounded-full w-9 h-9"
                 data-size="w-10 h-10"
               />
             </Link>
