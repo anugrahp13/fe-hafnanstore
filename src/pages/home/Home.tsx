@@ -1,11 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
-import { FaArrowRight } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "../../components/elements/Button";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { AiOutlineProduct } from "react-icons/ai";
+import { Services } from "./Services";
+import dataService from "../../data/dataService";
+import { HafnanMarts } from "../product/HafnanMart";
+import dataHafnanMart from "../../data/dataHafnanMart";
+import { HafnanDigitals } from "../product/HafnanDigital";
+import dataHafnanDigital from "../../data/dataHafnanDigital";
 
 export const Home = () => {
   useEffect(() => {
@@ -39,11 +44,11 @@ export const Home = () => {
                 </span>
               </h1>
               <h2 className="text-white text-base lg:text-lg dark:text-sky-300">
-                Kunjungi semua produk kami dan dapatkan dengan harga yang murah
+                Kunjungi semua produk kami dan dapatkan apa yang anda inginkan
               </h2>
               <div className="flex md:justify-start justify-center items-center text-sm gap-4">
                 <Button
-                  to="/contact"
+                  to="/products"
                   variant="secondary"
                   text="Lihat Produk"
                   icon={AiOutlineProduct}
@@ -54,84 +59,71 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      {/* About Section */}
+      {/* Service Section */}
+      <Services services={dataService} />
+
+      {/* Section HafnanMart */}
       <section className="dark:bg-dark">
-        <div className="container mx-auto px-4 py-24 lg:max-w-7xl text-center md:text-left">
-          <div className="flex flex-wrap">
-            <div className="w-full lg:w-1/2 text-center md:text-left">
-              <div className="text-sm text-primary dark:text-primary grid gap-3">
-                <span className="font-bold tracking-[.30em] uppercase">
-                  About
-                </span>
-                <span className="font-bold text-dark text-4xl lg:text-5xl dark:text-white">
-                  Get to Know <br />
-                  About Me
-                </span>
+        <div className="container mx-auto px-4 py-14 lg:max-w-7xl flex items-center justify-center">
+          <div className="text-left grid gap-10">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <picture>
+                  <img
+                    src="/image/avatar/hafnanmart.png"
+                    data-size="auto"
+                    alt="Logo - HafnanMart"
+                    className="lazyload rounded-full object-cover max-w-full w-10 h-10 dark:brightness-75 lazyloaded"
+                  />
+                </picture>
+                <span className="font-bold text-lg">HafnanMart</span>
               </div>
-              <div className="font-medium text-slate-800 text-sm my-2 lg:text-base dark:text-slate-200">
-                Don't know, then dislike.
-              </div>
+
+              <Link
+                to="/products"
+                className="text-primary hover:underline font-semibold"
+              >
+                Selengkapnya
+              </Link>
             </div>
-            <div className="w-full lg:w-1/2 text-left">
-              <h2 className="font-bold text-dark text-3xl mb-5 mb-w-md dark:text-white mt-5 md:mt-0">
-                Hi 👋, Welcome to {""}
-                <span className="text-primary">Hafnan Store</span>
-              </h2>
-              <p className="font-medium text-base text-slate-800 dark:text-white max-w-xl lg:text-base">
-                We are a platform that offers a range of services, however at
-                the moment we focus on web development and digital marketing.
-              </p>
-              <br />
-              <p className="font-medium text-base text-slate-800 dark:text-white max-w-xl lg:text-base">
-                Please get in touch with the number provided if you would like
-                to use our services.
-              </p>
-              <div className="flex justify-center items-center md:justify-start md:items-start text-left mt-9">
-                <div className="pr-6">
-                  <h2 className="font-semibold text-slate-800 dark:text-white text-4xl text-center md:text-left">
-                    01
-                    <span className="text-primary font-semibold text-3xl">
-                      +
-                    </span>
-                  </h2>
-                  <p className="font-medium text-sm text-slate-800 dark:text-white">
-                    Years Experience
-                  </p>
-                </div>
-                <div className="pl-6">
-                  <h2 className="font-semibold text-slate-800 dark:text-white text-4xl text-center md:text-left">
-                    2
-                    <span className="text-primary font-semibold text-3xl">
-                      +
-                    </span>
-                  </h2>
-                  <p className="font-medium text-sm text-slate-800 dark:text-white">
-                    Client Completed
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center items-center md:justify-start md:items-start text-sm mt-4 gap-4">
-                <Button
-                  to="/contact"
-                  variant="secondary"
-                  className="w-full lg:w-fit"
-                  text="Contact me"
-                  icon={IoMail}
-                  iconClassName="w-[1.10rem] h-[1.10rem]"
-                />
-                <Button
-                  to="/about"
-                  variant="primary"
-                  className="w-full lg:w-fit"
-                  text="About me"
-                  icon={FaArrowRight}
-                  iconClassName="w-4 h-4 -rotate-45"
-                />
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-4">
+              <HafnanMarts hafnanmarts={dataHafnanMart} />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Section Hafnan Digital */}
+      <section className="dark:bg-dark">
+        <div className="container mx-auto px-4 py-14 lg:max-w-7xl flex items-center justify-center">
+          <div className="text-left grid gap-10">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <picture>
+                  <img
+                    src="/image/avatar/hafnanmart.png"
+                    data-size="auto"
+                    alt="Logo - HafnanMart"
+                    className="lazyload rounded-full object-cover max-w-full w-10 h-10 dark:brightness-75 lazyloaded"
+                  />
+                </picture>
+                <span className="font-bold text-lg">Hafnan Digital</span>
+              </div>
+
+              <Link
+                to="/products"
+                className="text-primary hover:underline font-semibold"
+              >
+                Selengkapnya
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <HafnanDigitals hafnandigitals={dataHafnanDigital} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="dark:bg-dark">
         <div className="container mx-auto px-4 py-24 lg:max-w-7xl flex items-center justify-center">
