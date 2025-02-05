@@ -33,7 +33,7 @@ export const Home = () => {
             alt="Banner Hafnan Store"
             className="w-full pt-[3.8rem] h-[41rem] object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-25"></div>
           <div className="container mx-auto px-4 py-48 lg:max-w-7xl flex items-center justify-center absolute inset-0">
             <div className="w-full md:text-left text-center relative grid gap-4">
               <h1 className="text-xl font-semibold text-white dark:text-slate-200 leading-[4rem]">
@@ -43,7 +43,7 @@ export const Home = () => {
                   Kebutuhan Harian Anda
                 </span>
               </h1>
-              <h2 className="text-white text-base lg:text-lg dark:text-sky-300">
+              <h2 className="text-white text-base lg:text-lg">
                 Kunjungi semua produk kami dan dapatkan apa yang anda inginkan
               </h2>
               <div className="flex md:justify-start justify-center items-center text-sm gap-4">
@@ -81,7 +81,7 @@ export const Home = () => {
 
               <Link
                 to="/products"
-                className="text-primary hover:underline font-semibold"
+                className="text-primary dark:text-white hover:underline font-semibold"
               >
                 Selengkapnya
               </Link>
@@ -112,7 +112,7 @@ export const Home = () => {
 
               <Link
                 to="/products"
-                className="text-primary hover:underline font-semibold"
+                className="text-primary dark:text-white hover:underline font-semibold"
               >
                 Selengkapnya
               </Link>
@@ -124,7 +124,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section
       <section className="dark:bg-dark">
         <div className="container mx-auto px-4 py-24 lg:max-w-7xl flex items-center justify-center">
           <div className="w-full text-center">
@@ -153,7 +153,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
