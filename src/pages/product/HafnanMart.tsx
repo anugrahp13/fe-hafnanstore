@@ -23,13 +23,13 @@ export const HafnanMarts: React.FC<HafnanMartsType> = ({ hafnanmarts }) => {
                 src={hafnanmart.image}
                 data-size="auto"
                 alt={`Thumnails - ${hafnanmart.name}`}
-                className="lazyload rounded-xl object-cover max-w-full dark:brightness-75 lazyloaded transition-transform hover:scale-110"
+                className="lazyload rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110"
               />
             </picture>
           </Link>
           <Link
             to={`/products/${createSlug(hafnanmart.name)}`}
-            className="text-base lg:text-sm font-semibold text-primary flex justify-between items-center"
+            className="text-base lg:text-sm font-semibold text-primary dark:text-slate-200 hover:dark:text-white flex justify-between items-center"
           >
             <span>{hafnanmart.category}</span>
           </Link>
@@ -47,7 +47,7 @@ export const HafnanMarts: React.FC<HafnanMartsType> = ({ hafnanmarts }) => {
                     src={marketplace.logo}
                     data-size="auto"
                     alt={marketplace.name}
-                    className="lazyload rounded-xl object-cover max-w-full w-12 h-12 lg:w-7 lg:h-7 lazyloaded "
+                    className="lazyload rounded-xl object-cover max-w-full w-12 h-12 lg:w-7 lg:h-7 lazyloaded"
                   />
                 </picture>
               </a>
