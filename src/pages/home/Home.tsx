@@ -1,20 +1,33 @@
 /* eslint-disable react/no-unescaped-entities */
-import { IoMail } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../components/elements/Button";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { AiOutlineProduct } from "react-icons/ai";
 import { Services } from "./Services";
 import dataService from "../../data/dataService";
-import { HafnanMarts } from "../product/HafnanMart";
 import dataHafnanMart from "../../data/dataHafnanMart";
-import { HafnanDigitals } from "../product/HafnanDigital";
 import dataHafnanDigital from "../../data/dataHafnanDigital";
+import { HafnanMarts } from "./HafnanMart";
+import { HafnanDigitals } from "./HafnanDigital";
+import { HafnanMartsProps } from "./types/HafnanMart.type";
 
 export const Home = () => {
+  const [sortedHafnanMarts, setSortedHafnanMarts] = useState<
+    HafnanMartsProps[]
+  >([]);
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // ID hafnanmart yang ingin di tampilkan
+    const selectedHafnanmartIds = [1, 2, 4, 5, 6, 7];
+
+    //Filter hafnanmart berdasarkan ID yang dipilih
+    const filteredHafnanMarts = dataHafnanMart.filter((hafnanmart) =>
+      selectedHafnanmartIds.includes(hafnanmart.id)
+    );
+    // Set hasil filter ke dalam state
+    setSortedHafnanMarts(filteredHafnanMarts);
   }, []);
   return (
     <>
@@ -76,18 +89,18 @@ export const Home = () => {
                     className="lazyload rounded-full object-cover max-w-full w-10 h-10 dark:brightness-75 lazyloaded"
                   />
                 </picture>
-                <span className="font-bold text-lg">HafnanMart</span>
+                <span className="font-bold text-lg">Hafnan Mart</span>
               </div>
 
               <Link
-                to="/products"
+                to="/products/hafnan-mart"
                 className="text-primary dark:text-white hover:underline font-semibold"
               >
                 Selengkapnya
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-4">
-              <HafnanMarts hafnanmarts={dataHafnanMart} />
+              <HafnanMarts hafnanmarts={sortedHafnanMarts} />
             </div>
           </div>
         </div>
@@ -111,7 +124,7 @@ export const Home = () => {
               </div>
 
               <Link
-                to="/products"
+                to="/products/hafnan-digital"
                 className="text-primary dark:text-white hover:underline font-semibold"
               >
                 Selengkapnya
@@ -123,37 +136,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Section
-      <section className="dark:bg-dark">
-        <div className="container mx-auto px-4 py-24 lg:max-w-7xl flex items-center justify-center">
-          <div className="w-full text-center">
-            <div className="grid gap-3 mb-8">
-              <div className="text-sm text-primary dark:text-primary grid gap-3">
-                <span className="font-bold tracking-[.30em] uppercase">
-                  Contact
-                </span>
-                <span className="font-bold text-dark text-4xl lg:text-5xl dark:text-white">
-                  Contact Me
-                </span>
-                <span className="font-semibold text-slate-800 text-sm lg:text-base dark:text-slate-200 my-2">
-                  Want to collaborate or working with me? Get in touch by
-                  clicking button below
-                </span>
-                <div className="flex justify-center items-center text-sm">
-                  <Link
-                    to="mailto:anugrahprastyo13@gmail.com"
-                    className="font-semibold rounded-lg flex justify-center items-center px-6 py-2 border bg-primary border-primary text-white hover:border-primary hover:text-white hover:shadow-lg hover:opacity-80  gap-2"
-                  >
-                    Contact via Email
-                    <IoMail className="w-[1.10rem] h-[1.10rem]" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 };
