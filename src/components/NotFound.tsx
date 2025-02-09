@@ -6,7 +6,7 @@ export const NotFound = () => {
       <section className=" h-screen flex flex-col items-center justify-center text-center gap-4">
         <img
           src="/image/avatar/404.png"
-          className="w-72 h-72 object-cover"
+          className="h-72 object-cover"
           alt="Not Found 404"
         />
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
