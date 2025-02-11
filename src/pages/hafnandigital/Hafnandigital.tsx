@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import dataHafnanDigital from "../../data/dataHafnanDigital";
 import { HafnanDigitalsProps } from "../home/types/HafnanDigital.type";
 import { Cart } from "./Cart";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 interface HafnanDigitalsType {
   hafnandigitals: HafnanDigitalsProps[];
@@ -13,6 +14,11 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
   }, []);
   return (
     <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Product – Hafnan Digital</title>
+        </Helmet>
+      </HelmetProvider>
       <section className="my-52 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-7xl flex items-center justify-center">
           <div className="text-center grid gap-10">
