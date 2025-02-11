@@ -2,7 +2,13 @@ import { Cart } from "./Cart";
 import dataHafnanMart from "../../data/dataHafnanMart";
 import { HafnanMartsProps } from "../home/types/HafnanMart.type";
 import { useEffect, useState } from "react";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+  MdKeyboardDoubleArrowLeft,
+  MdKeyboardDoubleArrowRight,
+} from "react-icons/md";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 interface HafnanMartsType {
   hafnanmarts: HafnanMartsProps[];
@@ -27,6 +33,13 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   return (
     <>
+      <HelmetProvider>
+        <Helmet>
+          <title>
+            Product – Hafnan Mart
+          </title>
+        </Helmet>
+      </HelmetProvider>
       <section className="my-52 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-7xl flex items-center justify-center">
           <div className="text-center grid gap-10">
@@ -54,8 +67,8 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                   className="border p-2 rounded"
                 >
                   <option value={10}>10</option>
+                  <option value={20}>20</option>
                   <option value={30}>30</option>
-                  <option value={50}>50</option>
                   <option value={totalItems}>Full</option>
                 </select>
               </div>
