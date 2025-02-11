@@ -10,7 +10,7 @@ export const About = () => {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>Products - Hafnan Store</title>
+          <title>About - Hafnan Store</title>
         </Helmet>
       </HelmetProvider>
       <section className="my-52 dark:bg-dark">
@@ -20,7 +20,7 @@ export const About = () => {
               <img
                 src="/image/banner/banner hafnan store.png"
                 alt="Banner Hafnan Store"
-                className="w-full pt-[3.8rem] h-[41rem] object-cover"
+                className="w-full max-h-[41rem] object-contain"
               />
             </div>
             <div className="flex flex-col md:flex-row gap-10">
@@ -31,7 +31,7 @@ export const About = () => {
                 </h2>
                 <div className="mt-4 flex flex-col gap-2">
                   <button
-                    className={`p-3 text-center font-semibold ${
+                    className={`p-3 text-center rounded-lg font-semibold ${
                       activeTab === "store"
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 text-black"
@@ -41,7 +41,7 @@ export const About = () => {
                     Hafnan Store
                   </button>
                   <button
-                    className={`p-3 text-center font-semibold ${
+                    className={`p-3 text-center rounded-lg font-semibold ${
                       activeTab === "mart"
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 text-black"
@@ -51,7 +51,7 @@ export const About = () => {
                     Hafnan Mart
                   </button>
                   <button
-                    className={`p-3 text-center font-semibold ${
+                    className={`p-3 text-center rounded-lg font-semibold ${
                       activeTab === "digital"
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 text-black"
@@ -66,9 +66,9 @@ export const About = () => {
               {/* Content */}
               <div className="w-full md:w-3/4">
                 {activeTab === "store" ? (
-                  <div>
+                  <div className="grid gap-8">
                     <h2 className="text-2xl font-bold">Tentang Hafnan Store</h2>
-                    <p className="mt-4 text-gray-700 dark:text-white text-left leading-7">
+                    <p className="text-gray-700 dark:text-white text-left leading-7">
                       <span className="font-bold">Hafnan Store</span> adalah
                       aplikasi berbasis website yang menghadirkan berbagai
                       keunggulan dalam satu platform, dengan mengintegrasikan
@@ -76,6 +76,49 @@ export const About = () => {
                       Store siap menjadi pilihan utama untuk memenuhi segala
                       kebutuhan Anda.
                     </p>
+                    <h2 className="text-xl font-bold">Jasa Pengiriman</h2>
+                    <div className="flex justify-center items-center gap-4">
+                      <div className="scale-105">
+                        <picture>
+                          <img
+                            src="image/shipping/gojek.png"
+                            data-size="auto"
+                            alt=""
+                            className="lazyload rounded-xl object-cover max-w-full h-12 lazyloaded"
+                          />
+                        </picture>
+                      </div>
+                      <div className="scale-75">
+                        <picture>
+                          <img
+                            src="image/shipping/grab.png"
+                            data-size="auto"
+                            alt=""
+                            className="lazyload rounded-xl object-cover max-w-full h-12 lazyloaded"
+                          />
+                        </picture>
+                      </div>
+                      <div className="scale-90">
+                        <picture>
+                          <img
+                            src="image/shipping/jnt.png"
+                            data-size="auto"
+                            alt=""
+                            className="lazyload rounded-xl object-cover max-w-full h-12 lazyloaded"
+                          />
+                        </picture>
+                      </div>
+                      <div className="scale-75">
+                        <picture>
+                          <img
+                            src="image/shipping/jne.png"
+                            data-size="auto"
+                            alt=""
+                            className="lazyload rounded-xl object-cover max-w-full h-12 lazyloaded"
+                          />
+                        </picture>
+                      </div>
+                    </div>
                   </div>
                 ) : activeTab === "mart" ? (
                   <div>
