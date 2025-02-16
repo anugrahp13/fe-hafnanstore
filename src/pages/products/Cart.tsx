@@ -6,6 +6,7 @@ import { createSlug } from "../../components/elements/CreateSlug";
 import { ProductsProps } from "./types/Products.type";
 import { AiFillProduct } from "react-icons/ai";
 import dataHafnanMart from "../../data/dataHafnanMart";
+import dataHafnanDigital from "../../data/dataHafnanDigital";
 
 interface ProductsType {
   products: ProductsProps[];
@@ -17,7 +18,9 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
         const productCount =
           product.name === "Hafnan Mart"
             ? dataHafnanMart.length
-            : product.product;
+            : product.name === "Hafnan Digital"
+            ? dataHafnanDigital.length
+            : 0;
         return (
           <div
             className="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1 grid gap-1"
