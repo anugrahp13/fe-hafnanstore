@@ -14,7 +14,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/example/bihun-cap-tanam-jagung-320g",
+        url: "https://shopee.co.id/Bihun-Cap-Tanam-Jagung-320g-i.1463753573.27925388790?sp_atk=0334ddc4-e733-4c13-b033-74c34f3a2584",
       },
       {
         name: "WhatsApp",
@@ -53,7 +53,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/example/bihun-cap-tanam-jagung-320g",
+        url: "https://shopee.co.id/Teh-Celup-Sariwangi-Asli-25s-i.1463753573.29625507548?sp_atk=552e5fbd-9528-4d35-b520-5e0fef74919a",
       },
       {
         name: "WhatsApp",
@@ -92,7 +92,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/example/bihun-cap-tanam-jagung-320g",
+        url: "https://shopee.co.id/Minyak-Urut-Cap-Lang-GPU-30ml-i.1463753573.28775396418?sp_atk=4882ba3c-b69b-4fbb-8144-7a2278e9431b",
       },
       {
         name: "WhatsApp",
@@ -131,7 +131,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/example/bihun-cap-tanam-jagung-320g",
+        url: "https://shopee.co.id/Minyak-Urut-Cap-Lang-GPU-60ml-i.1463753573.28125392697?sp_atk=daa8975b-ea8e-4ef2-a720-0bb7a6c9f3a1",
       },
       {
         name: "WhatsApp",
@@ -170,7 +170,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/example/bihun-cap-tanam-jagung-320g",
+        url: "https://shopee.co.id/Minyak-Goreng-Tropical-2-Liter-i.1463753573.29375037292?sp_atk=c4a18175-f081-4ee7-86b1-188721afef28",
       },
       {
         name: "WhatsApp",
@@ -209,7 +209,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/example/bihun-cap-tanam-jagung-320g",
+        url: "https://shopee.co.id/Gula-Pasir-Gulaku-Kuning-Kg-i.1463753573.26275509338?sp_atk=6765e43c-49a7-495b-98c9-6b99a7e72baf",
       },
       {
         name: "WhatsApp",
@@ -249,7 +249,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/example/bihun-cap-tanam-jagung-320g",
+        url: "https://shopee.co.id/Teh-Celup-Cap-Botol-Hijau-Aroma-Melati-25s-i.1463753573.27325522118?sp_atk=2c7b2a8f-66bc-4c59-8996-3bb12e300f89",
       },
       {
         name: "WhatsApp",
@@ -288,7 +288,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Maizenaku-150gr-Tepung-Jati-Jagung-Maizenaku-Corn-Starch-i.1463753573.27875385178?sp_atk=58fe47ed-1c8e-4f4f-9109-229c9b51ec8e",
+        url: "https://shopee.co.id/Maizenaku-150gr-Tepung-Jati-Jagung-Maizenaku-Corn-Starch-i.1463753573.27875385178?sp_atk=cb5493f8-295d-464c-86c4-d9ce701c87b8",
       },
       {
         name: "WhatsApp",
@@ -327,7 +327,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=ac3a8224-2729-4723-9af8-4fd018b430d6",
       },
       {
         name: "WhatsApp",
@@ -367,7 +367,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Kecap-Manis-Nasional-Pouch-Refill-520ml-i.1463753573.28775508721?sp_atk=b7c79872-f6e2-41e7-b56d-c39dbd48c7db",
       },
       {
         name: "WhatsApp",
@@ -406,7 +406,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Kecap-Manis-Guna-Pouch-Refill-520g-i.1463753573.26175523200?sp_atk=3fbcb556-9680-4a05-820b-1f76575a6736",
       },
       {
         name: "WhatsApp",
@@ -445,7 +445,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Kecap-Manis-Bango-Pouch-Refill-720g-i.1463753573.29625508650?sp_atk=c9fd1f8e-1651-4e64-9650-406960476aac",
       },
       {
         name: "WhatsApp",
@@ -484,7 +484,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Kecap-Manis-Bango-Pouch-Refill-256g-i.1463753573.26475508903?sp_atk=65b196b3-0f0f-43c7-9e84-169279265104",
       },
       {
         name: "WhatsApp",
@@ -518,12 +518,12 @@ const dataHafnanMart = [
       {
         name: "Tokopedia",
         logo: "/image/marketplace/tokopedia.png",
-        url: "https://www.tokopedia.com/hafnan99/kecap-manis-bango-pouch-refill-77g",
+        url: "https://www.tokopedia.com/hafnan99/kecap-manis-bango-60ml-atau-77g",
       },
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Kecap-Manis-Bango-60ml-atau-77g-i.1463753573.29125518341?sp_atk=c363df7e-3a5e-4db5-8e2e-5c32bb8906b9",
       },
       {
         name: "WhatsApp",
@@ -562,7 +562,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Tepung-Sagu-Pak-Tani-500g-i.1463753573.27825508870?sp_atk=5ccc00e5-b479-4792-b44f-c85722491b2a",
       },
       {
         name: "WhatsApp",
@@ -601,7 +601,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Tepung-Beras-Rose-Brand-500g-i.1463753573.27675519003?sp_atk=a0f44b26-2c04-4ef5-9dcb-29df5402380b",
       },
       {
         name: "WhatsApp",
@@ -640,7 +640,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Tepung-Ketan-Rose-Brand-500g-i.1463753573.27675523935?sp_atk=df71dd13-6202-4db0-9e1a-ecac042daac3",
       },
       {
         name: "WhatsApp",
@@ -679,7 +679,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/3-Pcs-Bumbu-Racik-Sayur-Sop-i.1463753573.24641184767?sp_atk=83761108-774b-4232-a716-51e0359a2fcb",
       },
       {
         name: "WhatsApp",
@@ -718,7 +718,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/3-Pcs-Bumbu-Racik-Ayam-Goreng-i.1463753573.24741196792?sp_atk=9ea76bf1-bff1-4fdb-8b4d-5ca3246031c4",
       },
       {
         name: "WhatsApp",
@@ -757,7 +757,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/3-Pcs-Bumbu-Racik-Tempe-Goreng-i.1463753573.26325537896?sp_atk=193fb7d6-bbbf-4306-b9b9-81f13122d9ce",
       },
       {
         name: "WhatsApp",
@@ -796,7 +796,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/3-Pcs-Bumbu-Racik-Ikan-Goreng-i.1463753573.28075528347?sp_atk=fdc87c06-1e02-4516-9f3b-c828f9244d26",
       },
       {
         name: "WhatsApp",
@@ -835,7 +835,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Koepoe-Koepoe-Soda-Kue-81g-i.1463753573.29375528363?sp_atk=c2edc0b4-d4c9-44f7-a2ab-9db52d8298a0",
       },
       {
         name: "WhatsApp",
@@ -874,7 +874,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Blue-Band-Cake-Margarin-200g-i.1463753573.28325528228?sp_atk=bda2157b-b243-454b-9f88-a45e9ac6a6b0",
       },
       {
         name: "WhatsApp",
@@ -914,7 +914,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Susu-Bendera-Frisian-Flag-Kaleng-Putih-370g-i.1463753573.27125533361?sp_atk=a5e7a5f9-4c5b-40a7-8a06-59570221e36f",
       },
       {
         name: "WhatsApp",
@@ -954,7 +954,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Susu-Bendera-Frisian-Flag-Kaleng-Coklat-370g-i.1463753573.27125542665?sp_atk=65c81762-13dc-4bb6-9d4c-cfb65b4932d1",
       },
       {
         name: "WhatsApp",
@@ -1033,7 +1033,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Tepung-Terigu-Serbaguna-Bogasari-Segitiga-Biru-1Kg-i.1463753573.28475537993?sp_atk=92637d2b-f51f-4746-9438-874ab6add603",
       },
       {
         name: "WhatsApp",
@@ -1191,7 +1191,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/3-Pcs-Sun-Kara-Santan-Kelapa-Cair-65ml-i.1463753573.28925523654?sp_atk=0de29cad-c2e0-49df-a6fc-181ed817fa78",
       },
       {
         name: "WhatsApp",
@@ -1231,7 +1231,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Lem-Korea-Handsome-Box-(HS-108)-i.1463753573.24691195578",
       },
       {
         name: "WhatsApp",
@@ -1271,7 +1271,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Bagus-Kapur-Ajaib-Anti-Kecoa-dan-Semut-Box-12-Pcs-i.1463753573.28025508542?sp_atk=3173489d-145e-4242-891c-a115ca023661&xptdk=3173489d-145e-4242-891c-a115ca023661",
       },
       {
         name: "WhatsApp",
@@ -1311,7 +1311,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Balsem-Otot-Geliga-Pot-20g-i.1463753573.28525517998?sp_atk=bf1d2fb2-b68c-4bea-97a7-6fbc2c46a47e",
       },
       {
         name: "WhatsApp",
@@ -1351,7 +1351,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Mie-Burung-Cap-Dara-Mie-Kering-Pipih-140g-i.1463753573.28875513578",
       },
       {
         name: "WhatsApp",
@@ -1391,7 +1391,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Mie-Telur-Cap-3-Ayam-200g-i.1463753573.29675517468",
       },
       {
         name: "WhatsApp",
@@ -1431,7 +1431,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Mie-Burung-Cap-Dara-Doroku-600g-i.1463753573.26375517460?sp_atk=6ce1844f-4e1d-40eb-9ca2-3727ded4ce08",
       },
       {
         name: "WhatsApp",
@@ -1471,7 +1471,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Gula-Pasir-Gulaku-Kuning-1-2Kg-i.1463753573.26175522365",
       },
       {
         name: "WhatsApp",
@@ -1511,7 +1511,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Teh-Celup-Tong-Tji-Jasmine-Tea-Teh-Melati-25s-i.1463753573.29325517152?sp_atk=bd9d7ebf-92bc-4b3a-b7ff-a1a1a6083881",
       },
       {
         name: "WhatsApp",
