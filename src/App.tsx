@@ -9,6 +9,7 @@ import { HafnanMarts } from "./pages/hafnanmart/HafnanMart";
 import dataHafnanMart from "./data/dataHafnanMart";
 import dataHafnanDigital from "./data/dataHafnanDigital";
 import { HafnanDigitals } from "./pages/hafnandigital/Hafnandigital";
+import dataContact from "./data/dataContact";
 
 function ProductsPage() {
   const { name } = useParams();
@@ -28,7 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact contacts={dataContact} />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/products/:name" element={<ProductsPage />} />
       </Routes>
