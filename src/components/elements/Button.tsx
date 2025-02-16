@@ -26,8 +26,8 @@ export const Button: React.FC<ButtonProps> = ({
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
         className={`${defaultStyle} ${variants[variant]} ${className}`}
       >
         {Icon && <Icon className={iconClassName} />}
