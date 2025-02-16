@@ -1,9 +1,15 @@
 const dataContact = [
   {
     id: 1,
+    emails: [
+      {
+        name: "Email",
+        url:"hafnanstore99@gmail.com",
+      },
+    ],
     address: [
       {
-        name: "Address",
+        name: "Alamat",
         location: "https://maps.app.goo.gl/ynyTR5kmg2zPrm94A",
       },
     ],
