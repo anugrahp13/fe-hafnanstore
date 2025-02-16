@@ -20,7 +20,7 @@ export const About = () => {
               <img
                 src="/image/banner/banner hafnan store.png"
                 alt="Banner Hafnan Store"
-                className="w-full max-h-[41rem] object-contain"
+                className="w-full max-h-[41rem] object-contain rounded-3xl"
               />
             </div>
             <div className="flex flex-col md:flex-row gap-10">
