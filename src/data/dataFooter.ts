@@ -8,7 +8,7 @@ const dataFooter = [
     iteminformations: [
       {
         name: "Syarat & Ketentuan",
-        url: "/syarat-pengembalian",
+        url: "/return-terms",
       },
       {
         name: "FAQ",
