@@ -10,7 +10,7 @@ export const Footer = () => {
     <footer className="bg-dark py-6 dark:bg-slate-800">
       <div className="container justify-between mx-auto px-4 lg:max-w-7xl">
         <div className="w-full pt-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-5">
             {/* Informasi */}
             <div className="p-2 text-center md:text-left">
               <h2 className="font-bold text-2xl text-white uppercase">
