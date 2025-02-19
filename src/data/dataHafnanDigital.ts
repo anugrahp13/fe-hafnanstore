@@ -1,37 +1,45 @@
 const dataHafnanDigital = [
   {
     id: 1,
-    name: "12 - CVR - MD KEMURAHAN VS KEMAHALAN",
+    name: "VIDEO AFFILIATE PRODUK TERLARIS",
     image:
-      "/image/products/hafnandigital/12 - CVR - MD KEMURAHAN VS KEMAHALAN.png",
-    videoUrl: "1i5n-IFL8q9u0EOmraa9pHOUTjVrix_Iz",
-    landingPage: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=1",
-    checkout: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=3",
+      "/image/products/hafnandigital/VIDEO AFFILIATE PRODUK TERLARIS.png",
+    url: "https://lynk.id/hafnandigital/rxq7791",
   },
   {
     id: 2,
-    name: "33 - CVR - TESTI VERLY (HOUSEWIFE)",
+    name: "Digital Satu Persen  Akademi Creator NR HOUSE",
     image:
-      "/image/products/hafnandigital/33 - CVR - TESTI VERLY (HOUSEWIFE).png",
-    videoUrl: "1qdumtsJEiEgEdrQM3fZEhSaW6LIQpFOs",
-    landingPage: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=1",
-    checkout: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=3",
+      "/image/products/hafnandigital/Digital Satu Persen  Akademi Creator NR HOUSE.png",
+    url: "https://lynk.id/hafnandigital/mn11zdB",
   },
   {
     id: 3,
-    name: "CVR - TESTI BUDI PARDEDE",
-    image: "/image/products/hafnandigital/CVR - TESTI BUDI PARDEDE.png",
-    videoUrl: "15VdJSWWdfA5G3RwsYlJHjSY9xOujj03i",
-    landingPage: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=1",
-    checkout: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=3",
+    name: "MAHIR DIGITAL - Platform Belajar Digital Marketing Dari GAPTEK Sampai Bisa PRAKTEK DIGITAL MARKETING",
+    image:
+      "/image/products/hafnandigital/MAHIR DIGITAL - Platform Belajar Digital Marketing Dari GAPTEK Sampai Bisa PRAKTEK DIGITAL MARKETING.png",
+    url: "https://lynk.id/hafnandigital/pYX5WRP",
   },
   {
     id: 4,
-    name: "CVR - TESTI ZAKY",
-    image: "/image/products/hafnandigital/CVR - TESTI ZAKY.png",
-    videoUrl: "1EnYUECMEXUII7hnhbvWm8lXSvE3eQHMA",
-    landingPage: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=1",
-    checkout: "https://member.mahirdigital.id/lp?aff=anug9ed0&i=3",
+    name: "BATCH 10-Belajar Bareng Shopee Live by Wulanmiulan",
+    image:
+      "/image/products/hafnandigital/BATCH 10-Belajar Bareng Shopee Live by Wulanmiulan.png",
+    url: "https://lynk.id/hafnandigital/28bE2YN",
+  },
+  {
+    id: 5,
+    name: "Organic Brand Blueprint",
+    image:
+      "/image/products/hafnandigital/Organic Brand Blueprint.png",
+    url: "https://lynk.id/hafnandigital/eB4zDzV",
+  },
+  {
+    id: 6,
+    name: "Ebook Cuan Dari Rumah",
+    image:
+      "/image/products/hafnandigital/Ebook Cuan Dari Rumah.png",
+    url: "https://lynk.id/hafnandigital/RKeeraV",
   },
 ];
 
