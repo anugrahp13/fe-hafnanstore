@@ -7,16 +7,12 @@ const dataFooter = [
     subscription: "Berlangganan",
     iteminformations: [
       {
-        name: "Syarat & Ketentuan",
-        url: "/return-terms",
-      },
-      {
         name: "FAQ",
         url: "/faq",
       },
       {
-        name: "Testimoni",
-        url: "/testimoni",
+        name: "Syarat & Ketentuan",
+        url: "/return-terms",
       },
     ],
     marketplaces: [
