@@ -11,10 +11,14 @@ import dataHafnanDigital from "../../data/dataHafnanDigital";
 import { HafnanMarts } from "./HafnanMart";
 import { HafnanDigitals } from "./HafnanDigital";
 import { HafnanMartsProps } from "./types/HafnanMart.type";
+import { HafnanDigitalsProps } from "./types/HafnanDigital.type";
 
 export const Home = () => {
   const [sortedHafnanMarts, setSortedHafnanMarts] = useState<
     HafnanMartsProps[]
+  >([]);
+  const [sortedHafnanDigitals, setSortedHafnanSigitals] = useState<
+    HafnanDigitalsProps[]
   >([]);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,12 +26,22 @@ export const Home = () => {
     // ID hafnanmart yang ingin di tampilkan
     const selectedHafnanmartIds = [1, 2, 4, 5, 6, 7];
 
+    // ID hafnandigital yang ingin di tampilkan
+    const selectedHafnandigitalIds = [1, 2, 4, 5, 6, 7];
+
     //Filter hafnanmart berdasarkan ID yang dipilih
     const filteredHafnanMarts = dataHafnanMart.filter((hafnanmart) =>
       selectedHafnanmartIds.includes(hafnanmart.id)
     );
+
+    //Filter hafnandigital berdasarkan ID yang dipilih
+    const filteredHafnanDigital = dataHafnanDigital.filter((hafnandigital) =>
+      selectedHafnandigitalIds.includes(hafnandigital.id)
+    );
     // Set hasil filter ke dalam state
     setSortedHafnanMarts(filteredHafnanMarts);
+    setSortedHafnanSigitals(filteredHafnanDigital);
+    
   }, []);
   return (
     <>
@@ -130,8 +144,8 @@ export const Home = () => {
                 Selengkapnya
               </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <HafnanDigitals hafnandigitals={dataHafnanDigital} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              <HafnanDigitals hafnandigitals={sortedHafnanDigitals} />
             </div>
           </div>
         </div>
