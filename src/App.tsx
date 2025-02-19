@@ -10,6 +10,10 @@ import dataHafnanMart from "./data/dataHafnanMart";
 import dataHafnanDigital from "./data/dataHafnanDigital";
 import { HafnanDigitals } from "./pages/hafnandigital/Hafnandigital";
 import dataContact from "./data/dataContact";
+import { Faq } from "./pages/faq/Faq";
+import dataFaq from "./data/dataFaq";
+import { ReturnTerms } from "./pages/return/ReturnTerms";
+import dataReturnTerms from "./data/dataReturnTerms";
 
 function ProductsPage() {
   const { name } = useParams();
@@ -32,6 +36,8 @@ function App() {
         <Route path="/contact" element={<Contact contacts={dataContact} />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/products/:name" element={<ProductsPage />} />
+        <Route path="/faq" element={<Faq faqs={dataFaq} />} />
+        <Route path="/return-terms" element={<ReturnTerms returnterms={dataReturnTerms} />} />
       </Routes>
     </Layout>
   );
