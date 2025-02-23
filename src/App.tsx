@@ -14,6 +14,8 @@ import { Faq } from "./pages/faq/Faq";
 import dataFaq from "./data/dataFaq";
 import { ReturnTerms } from "./pages/return/ReturnTerms";
 import dataReturnTerms from "./data/dataReturnTerms";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProductsPage() {
   const { name } = useParams();
@@ -37,8 +39,12 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/products/:name" element={<ProductsPage />} />
         <Route path="/faq" element={<Faq faqs={dataFaq} />} />
-        <Route path="/return-terms" element={<ReturnTerms returnterms={dataReturnTerms} />} />
+        <Route
+          path="/return-terms"
+          element={<ReturnTerms returnterms={dataReturnTerms} />}
+        />
       </Routes>
+      <ToastContainer />
     </Layout>
   );
 }
