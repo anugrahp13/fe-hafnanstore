@@ -4,7 +4,7 @@ const dataService = [
   {
     id: 1,
     title: "Gratis Ongkir",
-    description: "Minimal Pembelian 100 ribu",
+    description: "Semua Barang 100%",
     icon: FaShippingFast,
   },
   {
