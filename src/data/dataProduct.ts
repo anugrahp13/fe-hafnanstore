@@ -7,7 +7,7 @@ const dataProduct = [
   {
     id: 2,
     name: "Hafnan Digital",
-    image: "image/products/hafnanmart/hafnanmart.png",
+    image: "image/products/hafnandigital/hafnandigital.png",
   },
 ];
 
