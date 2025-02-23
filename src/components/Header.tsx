@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { DarkModeToggle } from "./elements/DarkModeToggle";
-import { Sosmed } from "./elements/Sosmed";
 import { IoIosArrowUp } from "react-icons/io";
 import { TimeDisplay } from "./elements/TimeDisplay";
 import { Link, useLocation } from "react-router-dom";
+import dataFooter from "../data/dataFooter";
 
 const Header = () => {
   const [isSidebarMenuOpen, setIsSidebarMenuOpen] = useState(false);
@@ -65,6 +64,7 @@ const Header = () => {
 
   const isActiveLink = (path: string) => pathname === path;
 
+  const marketplaces = dataFooter[0].marketplaces;
   return (
     <>
       <header
@@ -171,7 +171,7 @@ const Header = () => {
               Home
             </Link>
             <Link
-              to="/projects"
+              to="/products"
               onClick={handleMenuClick}
               className="p-2.5 flex items-center text-[15px] rounded-lg px-4 font-bold hover:bg-slate-400/25 text-slate-800 hover:text-primary dark:text-white dark:hover:text-primary"
             >
@@ -191,23 +191,43 @@ const Header = () => {
             >
               Contact
             </Link>
+            <Link
+              to="/faq"
+              onClick={handleMenuClick}
+              className="p-2.5 flex items-center text-[15px] rounded-lg px-4 font-bold hover:bg-slate-400/25 text-slate-800 hover:text-primary dark:text-white dark:hover:text-primary"
+            >
+              FAQ
+            </Link>
+            <Link
+              to="/return-terms"
+              onClick={handleMenuClick}
+              className="p-2.5 flex items-center text-[15px] rounded-lg px-4 font-bold hover:bg-slate-400/25 text-slate-800 hover:text-primary dark:text-white dark:hover:text-primary"
+            >
+              Terms & Conditions
+            </Link>
           </nav>
           <hr className="my-2 text-gray-600" />
-          <div className="p-2.5 px-4 mt-auto">
-            <div className="flex flex-wrap items-center gap-4 py-3">
-              <Sosmed to="/" icon={FaInstagram} iconClassName="w-5 h-5" />
-              <Sosmed to="/" icon={FaFacebookF} iconClassName="w-5 h-5" />
-              <Sosmed to="/" icon={FaTiktok} iconClassName="w-5 h-5" />
+          <div className="p-2.5 px-4 space-y-4">
+            {/* data json untuk marketplace */}
+            <div className="flex gap-4">
+              {marketplaces.map((marketplace) => (
+                <a
+                  key={marketplace.name}
+                  href={marketplace.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={marketplace.logo}
+                    alt={marketplace.name}
+                    className="w-10 h-10"
+                  />
+                </a>
+              ))}
             </div>
             <p className="text-left font-semibold text-sm text-slate-800 dark:text-white">
-              © 2024 - Developed by {""}
-              <Link
-                to="https://anugrahprastyo.my.id/"
-                className="hover:text-primary font-bold"
-              >
-                Anugrah Prastyo
-              </Link>
-              .
+            © 2025 <span className="font-bold dark:text-white">Hafnan Store</span>.
+            All rights reserved.
             </p>
           </div>
         </div>
