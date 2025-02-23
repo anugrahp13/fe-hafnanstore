@@ -12,6 +12,9 @@ import { HafnanMarts } from "./HafnanMart";
 import { HafnanDigitals } from "./HafnanDigital";
 import { HafnanMartsProps } from "./types/HafnanMart.type";
 import { HafnanDigitalsProps } from "./types/HafnanDigital.type";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const Home = () => {
   const [sortedHafnanMarts, setSortedHafnanMarts] = useState<
@@ -27,7 +30,7 @@ export const Home = () => {
     const selectedHafnanmartIds = [1, 2, 4, 5, 6, 7];
 
     // ID hafnandigital yang ingin di tampilkan
-    const selectedHafnandigitalIds = [1, 2, 4, 5, 6, 7];
+    const selectedHafnandigitalIds = [1, 2, 3, 4, 5, 6];
 
     //Filter hafnanmart berdasarkan ID yang dipilih
     const filteredHafnanMarts = dataHafnanMart.filter((hafnanmart) =>
@@ -41,7 +44,6 @@ export const Home = () => {
     // Set hasil filter ke dalam state
     setSortedHafnanMarts(filteredHafnanMarts);
     setSortedHafnanSigitals(filteredHafnanDigital);
-    
   }, []);
   return (
     <>
@@ -113,8 +115,25 @@ export const Home = () => {
                 Selengkapnya
               </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-4">
-              <HafnanMarts hafnanmarts={sortedHafnanMarts} />
+            <div className="overflow-hidden w-full">
+              <Slider
+                dots={false}
+                infinite={true}
+                speed={500}
+                slidesToShow={5}
+                slidesToScroll={3}
+                responsive={[
+                  { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                  { breakpoint: 768, settings: { slidesToShow: 2 } },
+                  { breakpoint: 480, settings: { slidesToShow: 1 } },
+                ]}
+              >
+                {sortedHafnanMarts.map((product) => (
+                  <div key={product.id} className="p-2">
+                    <HafnanMarts hafnanmarts={[product]} />
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
         </div>
@@ -128,7 +147,7 @@ export const Home = () => {
               <div className="flex items-center gap-2">
                 <picture>
                   <img
-                    src="/image/avatar/hafnanmart.png"
+                    src="/image/avatar/hafnandigital.png"
                     data-size="auto"
                     alt="Logo - HafnanMart"
                     className="lazyload rounded-full object-cover max-w-full w-10 h-10 dark:brightness-75 lazyloaded"
@@ -144,8 +163,26 @@ export const Home = () => {
                 Selengkapnya
               </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
-              <HafnanDigitals hafnandigitals={sortedHafnanDigitals} />
+
+            <div className="overflow-hidden w-full">
+              <Slider
+                dots={false}
+                infinite={true}
+                speed={500}
+                slidesToShow={4} // Menampilkan produk awal sekaligus
+                slidesToScroll={3} // Menggeser produk setiap kali swipe
+                responsive={[
+                  { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                  { breakpoint: 768, settings: { slidesToShow: 2 } },
+                  { breakpoint: 480, settings: { slidesToShow: 1 } },
+                ]}
+              >
+                {sortedHafnanDigitals.map((product) => (
+                  <div key={product.id} className="p-2">
+                    <HafnanDigitals hafnandigitals={[product]} />
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
         </div>
