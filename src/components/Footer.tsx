@@ -1,11 +1,59 @@
 import { Link } from "react-router-dom";
 import dataFooter from "../data/dataFooter";
-import { Button } from "./elements/Button";
 import { LuMailCheck } from "react-icons/lu";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Footer = () => {
   const footerData = dataFooter[0];
+  const [email, setEmail] = useState("");
 
+  // Fungsi validasi email menggunakan regex
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubscribe = () => {
+    if (!email.trim()) {
+      toast.warn("⚠️ Mohon masukkan email sebelum berlangganan.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+      return;
+    }
+if (!isValidEmail(email)) {
+      toast.error("❌ Email tidak valid! Pastikan menggunakan format yang benar (contoh: user@example.com).", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+      return;
+    }
+    toast.success("✅ Berhasil berlangganan! Cek email Anda untuk konfirmasi.", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+
+    // Logika tambahan (contoh: kirim email ke backend atau API)
+    console.log("Email yang dimasukkan:", email);
+    setEmail(""); // Bersihkan input setelah berhasil
+  };
   return (
     <footer className="bg-dark py-6 dark:bg-slate-800">
       <div className="container justify-between mx-auto px-4 lg:max-w-7xl">
@@ -61,14 +109,16 @@ export const Footer = () => {
                   type="email"
                   placeholder="Masukkan email Anda"
                   className="p-2 w-full rounded-lg text-black"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <Button
-                  to="/products"
-                  variant="secondary"
-                  text="Subscribe"
-                  icon={LuMailCheck}
-                  iconClassName="w-[1.10rem] h-[1.10rem]"
-                />
+                <button
+                  onClick={handleSubscribe}
+                  className="p-2 w-full bg-primary text-white rounded-lg flex items-center justify-center gap-2"
+                >
+                  <LuMailCheck className="w-[1.10rem] h-[1.10rem]" />
+                  Subscribe
+                </button>
               </div>
             </div>
           </div>
