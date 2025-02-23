@@ -15,6 +15,8 @@ interface HafnanMartsType {
 }
 
 export const HafnanMarts: React.FC<HafnanMartsType> = () => {
+  const [searchTerm, setSearchTerm] = useState(""); // State untuk input pencarian
+  const [filteredProducts, setFilteredProducts] = useState(dataHafnanMart); // State untuk hasil pencarian
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(dataHafnanMart.length); // Default to "full"
 
@@ -22,22 +24,33 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
     window.scrollTo(0, 0);
   }, [currentPage, itemsPerPage]);
 
+  useEffect(() => {
+    const results = dataHafnanMart.filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredProducts(results);
+    setCurrentPage(1); // Reset ke halaman pertama setelah pencarian
+  }, [searchTerm]);
+
   // Total produk tersedia
-  const totalItems = dataHafnanMart.length;
+  const totalItems = filteredProducts.length;
 
   // Calculate indexes for pagination
   const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
   const indexOfLastItem = indexOfFirstItem + itemsPerPage;
-  const currentItems = dataHafnanMart.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredProducts.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   return (
     <>
       <HelmetProvider>
         <Helmet>
-          <title>
-            Product – Hafnan Mart
-          </title>
+          <title>Product – Hafnan Mart</title>
         </Helmet>
       </HelmetProvider>
       <section className="my-52 dark:bg-dark">
@@ -50,6 +63,15 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
               <span className="font-bold text-dark text-4xl lg:text-5xl dark:text-white">
                 Hafnan Mart
               </span>
+            </div>
+            <div className="w-full">
+              <input
+                type="text"
+                placeholder="Cari nama atau kategori produk . . ."
+                className="w-full px-4 py-3 border rounded-lg shadow-sm text-gray-700 dark:text-white dark:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-700 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
             <div className="text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5">
               <Cart hafnanmarts={currentItems} />
@@ -64,7 +86,7 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                     setItemsPerPage(value === totalItems ? totalItems : value);
                     setCurrentPage(1);
                   }}
-                  className="border p-2 rounded"
+                  className="border px-2 py-1 rounded-lg dark:bg-dark dark:text-white"
                 >
                   <option value={10}>10</option>
                   <option value={20}>20</option>
