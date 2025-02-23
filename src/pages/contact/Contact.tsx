@@ -21,7 +21,7 @@ export const Contact: React.FC<ContactsType> = () => {
       <section className="my-52 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-7xl flex flex-col items-center justify-center">
           <div className="max-w-4xl text-center grid gap-10">
-            <div className="bg-gray-200 p-6 flex flex-col md:flex-row gap-10 border rounded-lg items-center">
+            <div className="bg-gray-200 dark:bg-slate-800 p-6 flex flex-col md:flex-row gap-10 border rounded-lg items-center">
               <SectionLeft contacts={dataContact} />
               <div className="w-full md:w-3/4">
                 <div className="grid gap-5">
