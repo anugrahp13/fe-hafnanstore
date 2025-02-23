@@ -7,6 +7,7 @@ import { ProductsProps } from "./types/Products.type";
 import { AiFillProduct } from "react-icons/ai";
 import dataHafnanMart from "../../data/dataHafnanMart";
 import dataHafnanDigital from "../../data/dataHafnanDigital";
+import { useState } from "react";
 
 interface ProductsType {
   products: ProductsProps[];
@@ -15,6 +16,7 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
   return (
     <>
       {products.map((product) => {
+        const [isLoaded, setIsLoaded] = useState(false);
         const productCount =
           product.name === "Hafnan Mart"
             ? dataHafnanMart.length
@@ -30,14 +32,22 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
               to={`/products/${createSlug(product.name)}`}
               className="mb-3 inline-block"
             >
-              <picture>
+              <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
+                {!isLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-300">
+                    <AiFillProduct size={50} />
+                  </div>
+                )}
                 <img
                   src={product.image}
                   data-size="auto"
                   alt={product.name}
-                  className="lazyload rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110"
+                  className={`lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110 ${
+                    isLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                  onLoad={() => setIsLoaded(true)}
                 />
-              </picture>
+              </div>
             </Link>
             <div className="flex justify-between items-center tracking-tight mb-3">
               <div className="text-xl dark:text-white font-bold">
