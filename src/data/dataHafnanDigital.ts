@@ -41,6 +41,41 @@ const dataHafnanDigital = [
       "/image/products/hafnandigital/Ebook Cuan Dari Rumah.png",
     url: "https://lynk.id/hafnandigital/RKeeraV",
   },
+  {
+    id: 7,
+    name: "100 JUTA PERTAMA DARI AI: Belajar Lengkap AI Tools Penghasil CUAN with Anjas Maradita Course",
+    image:
+      "/image/products/hafnandigital/100 JUTA PERTAMA DARI AI.png",
+    url: "https://lynk.id/hafnandigital/NRr6Z5W",
+  },
+  {
+    id: 8,
+    name: "Rahasia Strategi Kohen menghasilkan ratusan juta dari tiktok",
+    image:
+      "/image/products/hafnandigital/Rahasia Strategi Kohen menghasilkan ratusan juta dari tiktok.png",
+    url: "https://lynk.id/hafnandigital/Vwj8lzW",
+  },
+  {
+    id: 9,
+    name: "200+ POWER POINT (PPT) TEMPLATES [Hak Jual Kembali - Keuntungan 100%]",
+    image:
+      "/image/products/hafnandigital/200+ POWER POINT (PPT) TEMPLATES.png",
+    url: "https://lynk.id/hafnandigital/0M4lGbY",
+  },
+  {
+    id: 10,
+    name: "WOW!! RIBUAN VIDEO AFFILIATE PRODUK TERLARIS SIAP PAKAI!! (HAK MENJUAL KEMBALI PROFIT 100%!!) by Eritaqueen",
+    image:
+      "/image/products/hafnandigital/WOW!! RIBUAN VIDEO AFFILIATE PRODUK TERLARIS SIAP PAKAI!!.png",
+    url: "https://lynk.id/hafnandigital/0AlnpL5",
+  },
+  {
+    id: 11,
+    name: "Canva Template - PLR/Reseller by @upekhalid]",
+    image:
+      "/image/products/hafnandigital/Canva Template - PLR(Reseller).png",
+    url: "https://lynk.id/hafnandigital/6gOy6Be",
+  },
 ];
 
 export default dataHafnanDigital;
