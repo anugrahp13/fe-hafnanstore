@@ -11,7 +11,7 @@ const dataFooter = [
         url: "/faq",
       },
       {
-        name: "Syarat & Ketentuan",
+        name: "Terms & Conditions",
         url: "/return-terms",
       },
     ],
