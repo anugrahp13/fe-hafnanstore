@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { createSlug } from "../../components/elements/CreateSlug";
 import { HafnanMartsProps } from "../home/types/HafnanMart.type";
 
 interface CartHafnanMartsType {
@@ -24,18 +22,12 @@ export const Cart: React.FC<CartHafnanMartsType> = ({ hafnanmarts }) => {
               />
             </picture>
           </div>
-          <Link
-            to={`/products/${createSlug(hafnanmart.name)}`}
-            className="text-base lg:text-sm font-semibold text-primary dark:text-slate-200 hover:dark:text-white flex justify-between items-center"
-          >
+          <div className="text-base lg:text-sm font-semibold text-primary dark:text-slate-200 hover:dark:text-white flex justify-between items-center">
             <span>{hafnanmart.category}</span>
-          </Link>
+          </div>
           <h3 className="text-3xl lg:text-lg font-bold tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
             <span>{hafnanmart.name}</span>
           </h3>
-          {/* <h3 className="text-lg lg:text-base text-primary font-bold tracking-tight line-clamp-2 mb-3">
-            <span>{hafnanmart.price}</span>
-          </h3> */}
           <div className="flex flex-wrap justify-center items-center text-sm gap-4">
             {hafnanmart.marketplaces.map((marketplace) => (
               <a href={marketplace.url} key={marketplace.name} target="_blank">
