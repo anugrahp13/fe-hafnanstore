@@ -32,7 +32,10 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
    // Calculate indexes for pagination
    const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
    const indexOfLastItem = indexOfFirstItem + itemsPerPage;
-   const currentItems = dataHafnanDigital.slice(indexOfFirstItem, indexOfLastItem);
+   const currentItems = filteredProducts.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
  
    const totalPages = Math.ceil(totalItems / itemsPerPage);
   return (
@@ -65,7 +68,7 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
             <div className="text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
               <Cart hafnandigitals={currentItems} />
             </div>
-            <div className="flex justify-between items-center mt-4">
+            <div className="flex flex-wrap justify-center lg:justify-between items-center mt-4 gap-6">
               <div className="flex items-center gap-2">
                 <label className="text-sm">Data per halaman:</label>
                 <select
