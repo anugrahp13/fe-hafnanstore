@@ -1,6 +1,30 @@
 import { useEffect, useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { AiFillProduct } from "react-icons/ai";
 
+type LazyImageProps = {
+  src: string;
+  alt: string;
+  className?: string;
+};
+
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full flex items-center justify-center">
+      {!imageLoaded && (
+        <AiFillProduct className="text-gray-400 text-4xl absolute" />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={`${className || ""} transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+        onLoad={() => setImageLoaded(true)}
+      />
+    </div>
+  );
+};
 export const About = () => {
   const [activeTab, setActiveTab] = useState("store");
   useEffect(() => {
@@ -17,7 +41,7 @@ export const About = () => {
         <div className="container mx-auto px-4 lg:max-w-7xl flex items-center justify-center">
           <div className="text-center grid gap-10">
             <div>
-              <img
+              <LazyImage
                 src="/image/banner/banner hafnan store.png"
                 alt="Banner Hafnan Store"
                 className="w-full max-h-[41rem] object-contain rounded-3xl"
