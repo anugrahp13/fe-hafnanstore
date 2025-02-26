@@ -3,7 +3,12 @@ import dataHafnanDigital from "../../data/dataHafnanDigital";
 import { HafnanDigitalsProps } from "../home/types/HafnanDigital.type";
 import { Cart } from "./Cart";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+  MdKeyboardDoubleArrowLeft,
+  MdKeyboardDoubleArrowRight,
+} from "react-icons/md";
 
 interface HafnanDigitalsType {
   hafnandigitals: HafnanDigitalsProps[];
@@ -13,31 +18,36 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State untuk input pencarian
   const [filteredProducts, setFilteredProducts] = useState(dataHafnanDigital); // State untuk hasil pencarian
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(dataHafnanDigital.length); // Default to "full"
-  
+  const [itemsPerPage, setItemsPerPage] = useState(8); // Default to "full"
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage, itemsPerPage]);
 
   useEffect(() => {
-    const results = dataHafnanDigital.filter((product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredProducts(results);
+    if (!searchTerm.trim()) {
+      setFilteredProducts(dataHafnanDigital);
+    } else {
+      const results = dataHafnanDigital.filter((product) =>
+        product.name?.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredProducts(results);
+    }
+    setCurrentPage(1);
   }, [searchTerm]);
 
-   // Total produk tersedia
-   const totalItems = filteredProducts.length;
+  // Total produk tersedia
+  const totalItems = filteredProducts.length;
 
-   // Calculate indexes for pagination
-   const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
-   const indexOfLastItem = indexOfFirstItem + itemsPerPage;
-   const currentItems = filteredProducts.slice(
+  // Calculate indexes for pagination
+  const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
+  const indexOfLastItem = indexOfFirstItem + itemsPerPage;
+  const currentItems = filteredProducts.slice(
     indexOfFirstItem,
     indexOfLastItem
   );
- 
-   const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
   return (
     <>
       <HelmetProvider>
@@ -101,7 +111,7 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardArrowLeft/>
+                  <MdKeyboardArrowLeft />
                 </button>
                 <span className="text-sm font-semibold">
                   Halaman {currentPage} of {totalPages}
