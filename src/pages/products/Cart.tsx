@@ -4,19 +4,36 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/elements/Button";
 import { createSlug } from "../../components/elements/CreateSlug";
 import { ProductsProps } from "./types/Products.type";
-import { AiFillProduct } from "react-icons/ai";
+import { AiFillProduct, AiOutlineLoading3Quarters } from "react-icons/ai";
 import dataHafnanMart from "../../data/dataHafnanMart";
 import dataHafnanDigital from "../../data/dataHafnanDigital";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ProductsType {
   products: ProductsProps[];
 }
 export const Cart: React.FC<ProductsType> = ({ products }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulasikan delay loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Misalnya loading selama 1 detik
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
+        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <p className="mt-4">Produk sedang dimuat...</p>
+      </div>
+    );
+  }
   return (
     <>
       {products.map((product) => {
-        const [isLoaded, setIsLoaded] = useState(false);
         const productCount =
           product.name === "Hafnan Mart"
             ? dataHafnanMart.length
@@ -33,20 +50,14 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
               className="mb-3 inline-block"
             >
               <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
-                {!isLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-300">
-                    <AiFillProduct size={50} />
-                  </div>
-                )}
-                <img
-                  src={product.image}
-                  data-size="auto"
-                  alt={product.name}
-                  className={`lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110 ${
-                    isLoaded ? "opacity-100" : "opacity-0"
-                  }`}
-                  onLoad={() => setIsLoaded(true)}
-                />
+                <picture>
+                  <img
+                    src={product.image}
+                    data-size="auto"
+                    alt={product.name}
+                    className="lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110"
+                  />
+                </picture>
               </div>
             </Link>
             <div className="flex justify-between items-center tracking-tight mb-3">
