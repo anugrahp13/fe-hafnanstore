@@ -1,39 +1,82 @@
+import { useEffect, useState } from "react";
 import { HafnanMartsProps } from "../home/types/HafnanMart.type";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import { AiFillProduct } from "react-icons/ai";
-import { useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 interface CartHafnanMartsType {
   hafnanmarts: HafnanMartsProps[];
+  searchQuery?: string; // Query pencarian (opsional)
 }
 
-export const Cart: React.FC<CartHafnanMartsType> = ({ hafnanmarts }) => {
+export const Cart: React.FC<CartHafnanMartsType> = ({
+  hafnanmarts = [],
+  searchQuery = "",
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulasikan delay loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Misalnya loading selama 1 detik
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
+        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <p className="mt-4">Produk sedang dimuat...</p>
+      </div>
+    );
+  }
+  // Jika hafnanmarts bukan array, tampilkan pesan error
+  if (!Array.isArray(hafnanmarts)) {
+    console.error("Error: hafnanmarts bukan array!", hafnanmarts);
+    return (
+      <p className="text-red-500">Terjadi kesalahan dalam memuat produk.</p>
+    );
+  }
+
+  // Filter produk berdasarkan pencarian
+  const filteredProducts = hafnanmarts.filter(
+    (product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Jika tidak ada hasil pencarian, tampilkan gambar "Produk Tidak Ditemukan"
+  if (filteredProducts.length === 0) {
+    return (
+      <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
+        <img
+          src="/image/avatar/404.png"
+          alt="Produk Tidak Ditemukan"
+          className="w-64 h-64 object-contain"
+        />
+        <p className="mt-4">Produk yang Anda cari tidak ditemukan.</p>
+      </div>
+    );
+  }
+
   return (
     <>
-      {hafnanmarts.map((hafnanmart) => {
-        const [isLoading, setIsLoading] = useState(true);
+      {filteredProducts.map((hafnanmart) => {
         return (
           <div
             className="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1 grid gap-1"
             key={hafnanmart.id}
           >
-            <div className="mb-3 inline-block relative">
-              {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-xl">
-                  <AiFillProduct className="text-gray-500 text-5xl" />
-                </div>
-              )}
-              <LazyLoadImage
-                src={hafnanmart.image}
-                alt={`Thumbnails - ${hafnanmart.name}`}
-                effect="blur" // Efek blur saat loading
-                className={`rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110 ${
-                  isLoading ? "hidden" : "block"
-                }`}
-                onLoad={() => setIsLoading(false)}
-                onError={() => setIsLoading(false)} // Pastikan ikon tetap muncul jika gagal load
-              />
+            <div className="mb-3 inline-block">
+              <picture>
+                <img
+                  src={hafnanmart.image || "/image/avatar/404.png"} // Jika kosong, gunakan default
+                  alt={`Thumbnails - ${hafnanmart.name}`}
+                  className="rounded-xl object-cover w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110"
+                  onError={(e) =>
+                    (e.currentTarget.src = "/image/avatar/404.png")
+                  }
+                />
+              </picture>
             </div>
             <div className="text-base lg:text-sm font-semibold text-primary dark:text-slate-200 hover:dark:text-white flex justify-between items-center">
               <span>{hafnanmart.category}</span>
@@ -51,9 +94,8 @@ export const Cart: React.FC<CartHafnanMartsType> = ({ hafnanmarts }) => {
                   <picture>
                     <img
                       src={marketplace.logo}
-                      data-size="auto"
                       alt={marketplace.name}
-                      className="lazyload rounded-xl object-cover max-w-full w-10 h-10 lg:w-7 lg:h-7 lazyloaded"
+                      className="rounded-xl object-cover max-w-full w-10 h-10 lg:w-7 lg:h-7"
                     />
                   </picture>
                 </a>
