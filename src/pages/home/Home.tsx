@@ -122,6 +122,8 @@ export const Home = () => {
                 speed={500}
                 slidesToShow={5}
                 slidesToScroll={3}
+                swipeToSlide={true} // Memastikan swipe lebih natural
+                touchThreshold={20} // Mengurangi sensitivitas swipe
                 responsive={[
                   { breakpoint: 1024, settings: { slidesToShow: 3 } },
                   { breakpoint: 768, settings: { slidesToShow: 2 } },
@@ -171,6 +173,8 @@ export const Home = () => {
                 speed={500}
                 slidesToShow={4} // Menampilkan produk awal sekaligus
                 slidesToScroll={3} // Menggeser produk setiap kali swipe
+                swipeToSlide={true} // Memastikan swipe lebih natural
+                touchThreshold={20} // Mengurangi sensitivitas swipe
                 responsive={[
                   { breakpoint: 1024, settings: { slidesToShow: 3 } },
                   { breakpoint: 768, settings: { slidesToShow: 2 } },
