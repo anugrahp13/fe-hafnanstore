@@ -28,8 +28,24 @@ export const Footer = () => {
       });
       return;
     }
-if (!isValidEmail(email)) {
-      toast.error("❌ Email tidak valid! Pastikan menggunakan format yang benar (contoh: user@example.com).", {
+    if (!isValidEmail(email)) {
+      toast.error(
+        "❌ Email tidak valid! Pastikan menggunakan format yang benar (contoh: user@example.com).",
+        {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+        }
+      );
+      return;
+    }
+    toast.success(
+      "✅ Berhasil berlangganan! Cek email Anda untuk konfirmasi.",
+      {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -37,18 +53,8 @@ if (!isValidEmail(email)) {
         pauseOnHover: true,
         draggable: true,
         theme: "colored",
-      });
-      return;
-    }
-    toast.success("✅ Berhasil berlangganan! Cek email Anda untuk konfirmasi.", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "colored",
-    });
+      }
+    );
 
     // Logika tambahan (contoh: kirim email ke backend atau API)
     console.log("Email yang dimasukkan:", email);
@@ -60,7 +66,7 @@ if (!isValidEmail(email)) {
         <div className="w-full pt-4">
           <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-5">
             {/* Informasi */}
-            <div className="p-2 text-center md:text-left">
+            <div className="p-2 text-center">
               <h2 className="font-bold text-2xl text-white uppercase">
                 {footerData.information}
               </h2>
@@ -74,11 +80,11 @@ if (!isValidEmail(email)) {
             </div>
 
             {/* Kami Tersedia di */}
-            <div className="p-2 text-center md:text-left">
+            <div className="p-2 text-center">
               <h2 className="font-bold text-2xl text-white uppercase">
                 {footerData.available}
               </h2>
-              <div className="flex justify-center md:justify-start gap-4 mt-2">
+              <div className="flex justify-center gap-4 mt-2">
                 {footerData.marketplaces.map((marketplace, index) => (
                   <a
                     key={index}
@@ -97,7 +103,7 @@ if (!isValidEmail(email)) {
             </div>
 
             {/* Newsletter */}
-            <div className="p-2 text-center md:text-left">
+            <div className="p-2 text-center">
               <h2 className="font-bold text-2xl text-white uppercase">
                 {footerData.subscription}
               </h2>
