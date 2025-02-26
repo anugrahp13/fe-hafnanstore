@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../components/elements/Button";
 import { HafnanDigitalsProps } from "./types/HafnanDigital.type";
 import { MdOutlineShoppingBag } from "react-icons/md";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import { AiFillProduct } from "react-icons/ai";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 interface HafnanDigitalsType {
   hafnandigitals: HafnanDigitalsProps[];
@@ -13,31 +11,50 @@ interface HafnanDigitalsType {
 export const HafnanDigitals: React.FC<HafnanDigitalsType> = ({
   hafnandigitals,
 }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulasikan delay loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Misalnya loading selama 1 detik
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
+        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <p className="mt-4">Produk sedang dimuat...</p>
+      </div>
+    );
+  }
+  // Jika hafnanmarts bukan array, tampilkan pesan error
+  if (!Array.isArray(hafnandigitals)) {
+    console.error("Error: hafnandigitals bukan array!", hafnandigitals);
+    return (
+      <p className="text-red-500">Terjadi kesalahan dalam memuat produk.</p>
+    );
+  }
   return (
     <>
       {hafnandigitals.map((hafnandigital) => {
-        const [isLoading, setIsLoading] = useState(true);
         return (
           <div
             className="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1 grid gap-1"
             key={hafnandigital.id}
           >
-            <div className="mb-3 inline-block relative">
-              {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-xl">
-                  <AiFillProduct className="text-gray-500 text-5xl" />
-                </div>
-              )}
-              <LazyLoadImage
-                src={hafnandigital.image}
-                alt={`Thumbnails - ${hafnandigital.name}`}
-                effect="blur" // Efek blur saat loading
-                className={`rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110 ${
-                  isLoading ? "hidden" : "block"
-                }`}
-                onLoad={() => setIsLoading(false)}
-                onError={() => setIsLoading(false)} // Pastikan ikon tetap muncul jika gagal load
-              />
+            <div className="mb-3 inline-block">
+              <picture>
+                <img
+                  src={hafnandigital.image || "/image/avatar/404.png"} // Jika kosong, gunakan default
+                  alt={`Thumbnails - ${hafnandigital.name}`}
+                  className="rounded-xl object-cover w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110"
+                  onError={(e) =>
+                    (e.currentTarget.src = "/image/avatar/404.png")
+                  }
+                />
+              </picture>
             </div>
             <div className="text-lg lg:text-base font-bold tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
               <span>{hafnandigital.name}</span>
