@@ -16,22 +16,28 @@ interface HafnanMartsType {
 
 export const HafnanMarts: React.FC<HafnanMartsType> = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State untuk input pencarian
-  const [filteredProducts, setFilteredProducts] = useState(dataHafnanMart); // State untuk hasil pencarian
+  const [filteredProducts, setFilteredProducts] = useState<HafnanMartsProps[]>(
+    []
+  ); // State untuk hasil pencarian
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(dataHafnanMart.length); // Default to "full"
+  const [itemsPerPage, setItemsPerPage] = useState(10); // Default to "full"
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage, itemsPerPage]);
 
   useEffect(() => {
-    const results = dataHafnanMart.filter(
-      (product) =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.category.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredProducts(results);
-    setCurrentPage(1); // Reset ke halaman pertama setelah pencarian
+    if (!searchTerm.trim()) {
+      setFilteredProducts(dataHafnanMart);
+    } else {
+      const results = dataHafnanMart.filter(
+        (product) =>
+          product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.category?.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredProducts(results);
+    }
+    setCurrentPage(1);
   }, [searchTerm]);
 
   // Total produk tersedia
