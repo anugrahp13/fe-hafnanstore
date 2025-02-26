@@ -1,35 +1,31 @@
 import { useEffect, useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { AiFillProduct } from "react-icons/ai";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-type LazyImageProps = {
-  src: string;
-  alt: string;
-  className?: string;
-};
-
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  return (
-    <div className="relative w-full flex items-center justify-center">
-      {!imageLoaded && (
-        <AiFillProduct className="text-gray-400 text-4xl absolute" />
-      )}
-      <img
-        src={src}
-        alt={alt}
-        className={`${className || ""} transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
-        onLoad={() => setImageLoaded(true)}
-      />
-    </div>
-  );
-};
 export const About = () => {
   const [activeTab, setActiveTab] = useState("store");
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    // Simulasikan delay loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Misalnya loading selama 1 detik
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
+        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <p className="mt-4">Produk sedang dimuat...</p>
+      </div>
+    );
+  }
   return (
     <>
       <HelmetProvider>
@@ -40,13 +36,13 @@ export const About = () => {
       <section className="my-52 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-7xl flex items-center justify-center">
           <div className="text-center grid gap-10">
-            <div>
-              <LazyImage
+            <picture>
+              <img
                 src="/image/banner/banner hafnan store.png"
                 alt="Banner Hafnan Store"
                 className="w-full max-h-[41rem] object-contain rounded-3xl"
               />
-            </div>
+            </picture>
             <div className="flex flex-col md:flex-row gap-10">
               {/* Sidebar */}
               <div className="w-full md:w-1/4">
@@ -101,8 +97,8 @@ export const About = () => {
                       kebutuhan Anda.
                     </p>
                     <h2 className="text-xl font-bold">Jasa Pengiriman</h2>
-                    <div className="flex justify-center items-center gap-4">
-                      <div className="scale-105">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                      <div className="scale-105 grid items-center justify-center">
                         <picture>
                           <img
                             src="image/shipping/gojek.png"
@@ -112,7 +108,7 @@ export const About = () => {
                           />
                         </picture>
                       </div>
-                      <div className="scale-75">
+                      <div className="scale-75 grid items-center justify-center">
                         <picture>
                           <img
                             src="image/shipping/grab.png"
@@ -122,7 +118,7 @@ export const About = () => {
                           />
                         </picture>
                       </div>
-                      <div className="scale-90">
+                      <div className="scale-90 grid items-center justify-center">
                         <picture>
                           <img
                             src="image/shipping/jnt.png"
@@ -132,7 +128,7 @@ export const About = () => {
                           />
                         </picture>
                       </div>
-                      <div className="scale-75">
+                      <div className="scale-75 grid items-center justify-center">
                         <picture>
                           <img
                             src="image/shipping/jne.png"
