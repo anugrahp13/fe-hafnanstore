@@ -14,7 +14,7 @@ export const SectionLeft: React.FC<ContactsType> = ({ contacts }) => {
       {contacts.map((contact) => (
         <div
           key={contact.id}
-          className="w-60 lg:w-1/4 flex flex-col items-center gap-2"
+          className="w-60 lg:w-1/4 flex flex-col items-center gap-2 order-2 md:order-1"
         >
           {contact.whatsapps.map((whatsapp) => (
             <div key={whatsapp.name} className="w-full grid gap-2">
