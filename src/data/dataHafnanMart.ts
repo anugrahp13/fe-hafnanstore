@@ -993,7 +993,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Minyak-Goreng-Resto-2-Liter-i.1463753573.25092076771?sp_atk=d749d08a-c7ec-4e26-9ac3-381c90281819",
       },
       {
         name: "WhatsApp",
@@ -1072,7 +1072,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Minyak-Goreng-Sania-2-Liter-i.1463753573.28427987809?sp_atk=73e123bf-6601-4a61-92a3-ee0ff01074de",
       },
       {
         name: "WhatsApp",
@@ -1111,7 +1111,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/Minyak-Goreng-Filma-2-Liter-i.1463753573.25892071837?sp_atk=39715da7-9068-4b82-ac7a-b5fa589d39fa",
       },
       {
         name: "WhatsApp",
@@ -1151,7 +1151,7 @@ const dataHafnanMart = [
       {
         name: "Shopee",
         logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/Minyak-Goreng-Sawit-Rizki-850ml-i.1463753573.29175394838?sp_atk=461f25b9-e500-4b52-918c-5025400f1e54",
+        url: "https://shopee.co.id/3-Pcs-Sasa-Santan-Kelapa-Cair-65ml-i.1463753573.28777991305?sp_atk=97d15354-1d02-4938-a291-e91dda4c9f41",
       },
       {
         name: "WhatsApp",
@@ -1499,7 +1499,7 @@ const dataHafnanMart = [
     id: 39,
     name: "Teh Celup Tong Tji / Jasmine Tea / Teh Melati 25s",
     price: "Rp 8.125",
-    category: "Gula Pasir",
+    category: "Teh Celup",
     image:
       "/image/products/hafnanmart/Teh Celup Tong Tji Jasmine Tea 25s.png",
     marketplaces: [
@@ -1526,6 +1526,46 @@ const dataHafnanMart = [
         storefront: "Teh Celup",
         description:
           "Rasakan kenikmatan teh premium dengan Teh Celup Tongji Jasmine Tea 25s, pilihan sempurna bagi pecinta teh melati.",
+      },
+    ],
+    specification: [
+      {
+        storage: "Suhu Ruangan",
+        timeStorage: "Lainnya",
+      },
+    ],
+  },
+  {
+    id: 40,
+    name: "Dairy Champ Kental Manis Kaleng 480g",
+    price: "Rp 8.125",
+    category: "Susu Kental Manis",
+    image:
+      "/image/products/hafnanmart/Dairy Champ Kental Manis Kaleng 480g.png",
+    marketplaces: [
+      {
+        name: "Tokopedia",
+        logo: "/image/marketplace/tokopedia.png",
+        url: "https://www.tokopedia.com/hafnan99/teh-celup-tong-tji-jasmine-tea-teh-melati-25s-1730785908903348054",
+      },
+      {
+        name: "Shopee",
+        logo: "/image/marketplace/shopee.png",
+        url: "https://shopee.co.id/Dairy-Champ-Kental-Manis-Kaleng-480g-i.1463753573.27428001224?sp_atk=7ff08bf9-25a1-4a79-b6aa-8c9de92a68ee&xptdk=7ff08bf9-25a1-4a79-b6aa-8c9de92a68ee",
+      },
+      {
+        name: "WhatsApp",
+        logo: "/image/marketplace/whatsapp.png",
+        url: "https://wa.me/6281380525404?text=Saya%20ingin%20membeli%20Dairy%20Champ%20Kental%20Manis%20Kaleng%20480g",
+      },
+    ],
+    detail: [
+      {
+        condition: "Baru",
+        minOrder: "1",
+        storefront: "Susu Kental Manis",
+        description:
+          "Nikmati kelezatan Dairy Champ Kental Manis dalam kemasan kaleng 480g yang praktis dan ekonomis! Dengan rasa manis yang pas dan tekstur yang lembut, produk ini cocok untuk berbagai kreasi makanan dan minuman favorit Anda.",
       },
     ],
     specification: [
