@@ -16,7 +16,7 @@ export const Cart: React.FC<CartHafnanMartsType> = ({
     // Simulasikan delay loading
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // Misalnya loading selama 1 detik
+    }, 200);
 
     return () => clearTimeout(timer);
   }, []);
