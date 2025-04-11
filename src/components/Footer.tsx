@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import dataFooter from "../data/dataFooter";
-import { LuMailCheck } from "react-icons/lu";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MailCheck } from "lucide-react";
 
 export const Footer = () => {
   const footerData = dataFooter[0];
@@ -122,7 +122,7 @@ export const Footer = () => {
                   onClick={handleSubscribe}
                   className="p-2 w-full bg-primary text-white rounded-lg flex items-center justify-center gap-2"
                 >
-                  <LuMailCheck className="w-[1.10rem] h-[1.10rem]" />
+                  <MailCheck className="w-[1.10rem] h-[1.10rem]" />
                   Subscribe
                 </button>
               </div>
