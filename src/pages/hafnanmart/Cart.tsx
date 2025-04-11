@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { HafnanMartsProps } from "../home/types/HafnanMart.type";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { LoaderCircle } from "lucide-react";
 
 interface CartHafnanMartsType {
   hafnanmarts: HafnanMartsProps[];
@@ -24,7 +24,7 @@ export const Cart: React.FC<CartHafnanMartsType> = ({
   if (isLoading) {
     return (
       <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
-        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <LoaderCircle className="text-6xl animate-spin text-blue-500" />
         <p className="mt-4">Produk sedang dimuat...</p>
       </div>
     );
