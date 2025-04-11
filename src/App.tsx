@@ -8,7 +8,6 @@ import { Products } from "./pages/products/Products";
 import { HafnanMarts } from "./pages/hafnanmart/HafnanMart";
 import dataHafnanMart from "./data/dataHafnanMart";
 import dataHafnanDigital from "./data/dataHafnanDigital";
-import { HafnanDigitals } from "./pages/hafnandigital/Hafnandigital";
 import dataContact from "./data/dataContact";
 import { Faq } from "./pages/faq/Faq";
 import dataFaq from "./data/dataFaq";
@@ -18,6 +17,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import dataNexasite from "./data/dataNexasite";
 import { Nexasites } from "./pages/nexasite/Nexasite";
+import { HafnanDigitals } from "./pages/hafnandigital/Hafnandigital";
 
 function ProductsPage() {
   const { name } = useParams();
