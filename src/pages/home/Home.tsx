@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button } from "../../components/elements/Button";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { AiOutlineProduct } from "react-icons/ai";
 import { Services } from "./Services";
 import dataService from "../../data/dataService";
 import dataHafnanMart from "../../data/dataHafnanMart";
@@ -15,6 +14,7 @@ import { HafnanDigitalsProps } from "./types/HafnanDigital.type";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Package } from "lucide-react";
 
 export const Home = () => {
   const [sortedHafnanMarts, setSortedHafnanMarts] = useState<
@@ -80,7 +80,7 @@ export const Home = () => {
                   to="/products"
                   variant="secondary"
                   text="Lihat Produk"
-                  icon={AiOutlineProduct}
+                  icon={Package}
                   iconClassName="w-[1.10rem] h-[1.10rem]"
                 />
               </div>
