@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
-import { FaBook } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/elements/Button";
 import { createSlug } from "../../components/elements/CreateSlug";
 import { ProductsProps } from "./types/Products.type";
-import { AiFillProduct, AiOutlineLoading3Quarters } from "react-icons/ai";
 import dataHafnanMart from "../../data/dataHafnanMart";
 import dataHafnanDigital from "../../data/dataHafnanDigital";
 import { useEffect, useState } from "react";
 import dataNexasite from "../../data/dataNexasite";
+import { Eye, LoaderCircle, Package } from "lucide-react";
 
 interface ProductsType {
   products: ProductsProps[];
@@ -27,7 +26,7 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
   if (isLoading) {
     return (
       <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
-        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <LoaderCircle className="text-6xl animate-spin text-blue-500" />
         <p className="mt-4">Produk sedang dimuat...</p>
       </div>
     );
@@ -69,7 +68,7 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
               </div>
               <div className="flex justify-center items-center text-base dark:text-white font-semibold gap-1">
                 <span>
-                  <AiFillProduct />
+                  <Package className="w-5 h-5" />
                 </span>
                 <span>{productCount}</span>
               </div>
@@ -79,9 +78,9 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
                 to={`/products/${createSlug(product.name)}`}
                 variant="secondary"
                 text="Lihat Sekarang"
-                className="w-full lg:w-fit px-6 py-2"
-                icon={FaBook}
-                iconClassName="w-3.5 h-3.5"
+                className="w-full lg:w-fit"
+                icon={Eye}
+                iconClassName="w-4 h-4"
               />
             </div>
           </div>
