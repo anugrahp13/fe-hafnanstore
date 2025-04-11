@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import {
-  MdKeyboardArrowLeft,
-  MdKeyboardArrowRight,
-  MdKeyboardDoubleArrowLeft,
-  MdKeyboardDoubleArrowRight,
-} from "react-icons/md";
 import { NexasitesProps } from "../home/types/Nexasite.type";
 import { Cart } from "./Cart";
 import dataNexasite from "../../data/dataNexasite";
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 
 interface NexasitesType {
   nexasites: NexasitesProps[];
@@ -69,7 +64,7 @@ export const Nexasites: React.FC<NexasitesType> = () => {
             <div className="w-full">
               <input
                 type="text"
-                placeholder="Cari nama produk digital . . ."
+                placeholder="Cari website yang anda inginkan . . ."
                 className="w-full px-4 py-3 border rounded-lg shadow-sm text-gray-700 dark:text-white dark:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-700 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -102,7 +97,7 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardDoubleArrowLeft />
+                  <ChevronsLeft className="w-4 h-4"/>
                 </button>
                 <button
                   onClick={() =>
@@ -111,7 +106,7 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardArrowLeft />
+                  <ChevronLeft className="w-4 h-4"/>
                 </button>
                 <span className="text-sm font-semibold">
                   Halaman {currentPage} of {totalPages}
@@ -123,14 +118,14 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardArrowRight />
+                  <ChevronRight className="w-4 h-4"/>
                 </button>
                 <button
                   onClick={() => setCurrentPage(totalPages)}
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardDoubleArrowRight />
+                  <ChevronsRight className="w-4 h-4"/>
                 </button>
               </div>
             </div>
