@@ -8,6 +8,7 @@ import { AiFillProduct, AiOutlineLoading3Quarters } from "react-icons/ai";
 import dataHafnanMart from "../../data/dataHafnanMart";
 import dataHafnanDigital from "../../data/dataHafnanDigital";
 import { useEffect, useState } from "react";
+import dataNexasite from "../../data/dataNexasite";
 
 interface ProductsType {
   products: ProductsProps[];
@@ -39,6 +40,8 @@ export const Cart: React.FC<ProductsType> = ({ products }) => {
             ? dataHafnanMart.length
             : product.name === "Hafnan Digital"
             ? dataHafnanDigital.length
+            : product.name === "Nexasite"
+            ? dataNexasite.length
             : 0;
         return (
           <div
