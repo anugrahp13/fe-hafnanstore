@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { IoClose } from "react-icons/io5";
 import { DarkModeToggle } from "./elements/DarkModeToggle";
-import { IoIosArrowUp } from "react-icons/io";
 import { TimeDisplay } from "./elements/TimeDisplay";
 import { Link, useLocation } from "react-router-dom";
 import dataFooter from "../data/dataFooter";
+import { ChevronUp, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isSidebarMenuOpen, setIsSidebarMenuOpen] = useState(false);
@@ -88,7 +86,7 @@ const Header = () => {
             </Link>
           </div>
           <nav className="flex flex-row gap-4 items-center order-1">
-            <HiOutlineMenuAlt2
+            <Menu
               onClick={() => setIsSidebarMenuOpen(true)}
               className="order2 text-slate-800 dark:text-white text-lg block items-center md:hidden h-8 w-8 lg:w-6 scale-90 cursor-pointer"
             />
@@ -155,7 +153,7 @@ const Header = () => {
               />
             </Link>
             <button>
-              <IoClose
+              <X
                 onClick={() => setIsSidebarMenuOpen(false)}
                 className="h-8 w-8 scale-75 text-slate-800 dark:text-white"
               />
@@ -238,7 +236,7 @@ const Header = () => {
           onClick={scrollToTop}
           className="fixed bottom-4 right-4 p-2 bg-primary rounded-full text-white z-10"
         >
-          <IoIosArrowUp className="w-6 h-6" />
+          <ChevronUp className="w-6 h-6" />
         </button>
       )}
     </>
