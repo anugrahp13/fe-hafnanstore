@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { FaqsProps } from "./types/Faq.type";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { motion } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface FaqsType {
   faqs: FaqsProps[];
@@ -24,7 +24,7 @@ export const Cart: React.FC<FaqsType> = ({ faqs }) => {
           >
             <span className="font-semibold">{faq.question}</span>
             <span>
-              {openIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              {openIndex === index ? <ChevronUp /> : <ChevronDown/>}
             </span>
           </button>
           <motion.div
