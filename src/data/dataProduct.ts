@@ -11,7 +11,7 @@ const dataProduct = [
   },
   {
     id: 3,
-    name: "NexaSite",
+    name: "Nexa Site",
     image: "image/products/nexasite/nexasite.png",
   },
 ];
