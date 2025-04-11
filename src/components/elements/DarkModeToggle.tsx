@@ -1,5 +1,5 @@
+import { Moon, SunMedium } from "lucide-react";
 import { useState, useEffect } from "react";
-import { IoIosSunny, IoMdMoon } from "react-icons/io";
 
 export const DarkModeToggle: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -32,9 +32,9 @@ export const DarkModeToggle: React.FC = () => {
   return (
     <button onClick={toggleDarkMode} className="text-lg items-center order-1">
       {darkMode ? (
-        <IoMdMoon className="h-8 w-8 lg:h-6 lg:w-6 scale-[.60] lg:scale-90" />
+        <Moon className="h-8 w-8 lg:h-6 lg:w-6 scale-[.60] lg:scale-90" />
       ) : (
-        <IoIosSunny className="h-8 w-8 lg:h-6 lg:w-6 scale-[.80] lg:scale-110" />
+        <SunMedium className="h-8 w-8 lg:h-6 lg:w-6 scale-[.80] lg:scale-110" />
       )}
     </button>
   );
