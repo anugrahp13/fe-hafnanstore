@@ -1,8 +1,6 @@
 import { ContactsProps } from "./types/Contact.type";
 import { Button } from "../../components/elements/Button";
-import { TiLocation } from "react-icons/ti";
-import { FaWhatsapp } from "react-icons/fa";
-import { IoMailOpenOutline } from "react-icons/io5";
+import { MailOpen, MapPinCheckInside, Send } from "lucide-react";
 
 interface ContactsType {
   contacts: ContactsProps[];
@@ -23,8 +21,8 @@ export const SectionLeft: React.FC<ContactsType> = ({ contacts }) => {
                 href={whatsapp.url}
                 variant="tertiary"
                 text="Hubungi"
-                icon={FaWhatsapp}
-                iconClassName="w-[1.30rem] h-[1.30rem]"
+                icon={Send}
+                iconClassName="w-5 h-5"
               />
             </div>
           ))}
@@ -36,8 +34,8 @@ export const SectionLeft: React.FC<ContactsType> = ({ contacts }) => {
                 href={addres.location}
                 variant="primary"
                 text="Lihat Peta"
-                icon={TiLocation}
-                iconClassName="w-[1.30rem] h-[1.30rem]"
+                icon={MapPinCheckInside}
+                iconClassName="w-5 h-5"
               />
             </div>
           ))}
@@ -49,8 +47,8 @@ export const SectionLeft: React.FC<ContactsType> = ({ contacts }) => {
                 href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email.url}`}
                 variant="secondary"
                 text="Email"
-                icon={IoMailOpenOutline}
-                iconClassName="w-[1.30rem] h-[1.30rem]"
+                icon={MailOpen}
+                iconClassName="w-5 h-5"
               />
             </div>
           ))}
