@@ -3,12 +3,7 @@ import dataHafnanDigital from "../../data/dataHafnanDigital";
 import { HafnanDigitalsProps } from "../home/types/HafnanDigital.type";
 import { Cart } from "./Cart";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import {
-  MdKeyboardArrowLeft,
-  MdKeyboardArrowRight,
-  MdKeyboardDoubleArrowLeft,
-  MdKeyboardDoubleArrowRight,
-} from "react-icons/md";
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 
 interface HafnanDigitalsType {
   hafnandigitals: HafnanDigitalsProps[];
@@ -102,7 +97,7 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardDoubleArrowLeft />
+                  <ChevronsLeft className="w-4 h-4"/>
                 </button>
                 <button
                   onClick={() =>
@@ -111,7 +106,7 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardArrowLeft />
+                  <ChevronLeft className="w-4 h-4"/>
                 </button>
                 <span className="text-sm font-semibold">
                   Halaman {currentPage} of {totalPages}
@@ -123,14 +118,14 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardArrowRight />
+                  <ChevronRight className="w-4 h-4"/>
                 </button>
                 <button
                   onClick={() => setCurrentPage(totalPages)}
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <MdKeyboardDoubleArrowRight />
+                  <ChevronsRight className="w-4 h-4"/>
                 </button>
               </div>
             </div>
