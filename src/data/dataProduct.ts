@@ -9,6 +9,11 @@ const dataProduct = [
     name: "Hafnan Digital",
     image: "image/products/hafnandigital/hafnandigital.png",
   },
+  {
+    id: 3,
+    name: "NexaSite",
+    image: "image/products/nexasite/nexasite.png",
+  },
 ];
 
 export default dataProduct;
