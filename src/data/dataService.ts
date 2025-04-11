@@ -1,29 +1,29 @@
-import { FaShippingFast, FaCreditCard, FaGift, FaUndo } from "react-icons/fa";
+import { CreditCard, Gift, RotateCcw, Truck } from "lucide-react";
 
 const dataService = [
   {
     id: 1,
     title: "Gratis Ongkir",
     description: "Tanpa Minimal Belanja",
-    icon: FaShippingFast,
+    icon: Truck,
   },
   {
     id: 2,
     title: "Quick Payment",
     description: "Pembayaran Cepat dan Aman",
-    icon: FaCreditCard,
+    icon: CreditCard,
   },
   {
     id: 3,
     title: "Gratis Hadiah",
     description: "Syarat & Ketentuan Berlaku",
-    icon: FaGift,
+    icon: Gift,
   },
   {
     id: 4,
     title: "Gratis Return",
     description: "Syarat & Ketentuan Berlaku",
-    icon: FaUndo,
+    icon: RotateCcw,
   },
 ];
 
