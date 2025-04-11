@@ -16,6 +16,8 @@ import { ReturnTerms } from "./pages/return/ReturnTerms";
 import dataReturnTerms from "./data/dataReturnTerms";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import dataNexasite from "./data/dataNexasite";
+import { Nexasites } from "./pages/nexasite/Nexasite";
 
 function ProductsPage() {
   const { name } = useParams();
@@ -24,6 +26,8 @@ function ProductsPage() {
     return <HafnanMarts hafnanmarts={dataHafnanMart} />;
   } else if (name === "hafnan-digital") {
     return <HafnanDigitals hafnandigitals={dataHafnanDigital} />;
+  } else if (name === "nexa-site") {
+    return <Nexasites nexasites={dataNexasite} />;
   } else {
     return <NotFound />;
   }
