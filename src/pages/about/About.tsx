@@ -1,6 +1,6 @@
+import { LoaderCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export const About = () => {
   const [activeTab, setActiveTab] = useState("store");
@@ -21,7 +21,7 @@ export const About = () => {
   if (isLoading) {
     return (
       <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
-        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <LoaderCircle className="text-6xl animate-spin text-blue-500" />
         <p className="mt-4">Produk sedang dimuat...</p>
       </div>
     );
