@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "../../components/elements/Button";
-import { MdOutlineShoppingBag } from "react-icons/md";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { NexasitesProps } from "../home/types/Nexasite.type";
 import dataNexasite from "../../data/dataNexasite";
+import { Link } from "react-router-dom";
+import { Eye, LoaderCircle } from "lucide-react";
 
 interface CartNexasitesType {
   nexasites: NexasitesProps[];
@@ -27,7 +27,7 @@ export const Cart: React.FC<CartNexasitesType> = ({
   if (isLoading) {
     return (
       <div className="col-span-full flex flex-col items-center justify-center min-h-[400px] text-gray-500 text-center">
-        <AiOutlineLoading3Quarters className="text-6xl animate-spin text-blue-500" />
+        <LoaderCircle className="text-6xl animate-spin text-blue-500" />
         <p className="mt-4">Produk sedang dimuat...</p>
       </div>
     );
@@ -66,29 +66,41 @@ export const Cart: React.FC<CartNexasitesType> = ({
             className="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1 grid gap-1"
             key={nexasites.id}
           >
-            <div className="mb-3 inline-block">
-              <picture>
-                <img
-                  src={nexasites.image || "/image/avatar/404.png"} // Jika kosong, gunakan default
-                  alt={`Thumbnails - ${nexasites.name}`}
-                  className="rounded-xl object-cover w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110"
-                  onError={(e) =>
-                    (e.currentTarget.src = "/image/avatar/404.png")
-                  }
-                />
-              </picture>
+            <Link to="#" className="mb-3 inline-block">
+              <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
+                <picture>
+                  <img
+                    src={nexasites.image}
+                    data-size="auto"
+                    alt={nexasites.name}
+                    className="lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110"
+                  />
+                </picture>
+              </div>
+            </Link>
+            <div className="tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
+              <p className="text-base font-bold">{nexasites.name}</p>
+              <p className="text-xs">
+                by{" "}
+                <Link to="#" className="font-semibold">
+                  {nexasites.author}
+                </Link>
+              </p>
             </div>
-            <h3 className="text-xl lg:text-lg font-bold tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
-              <span>{nexasites.name}</span>
-            </h3>
-            <div className="flex flex-wrap justify-center items-center text-sm gap-4">
+            <div className="flex justify-between items-center text-sm gap-4">
+              <div className="tracking-tight line-clamp-2 min-h-[3rem]">
+                <p className="text-lg font-bold">
+                  Rp.{nexasites.price.toLocaleString("id-ID")}
+                </p>
+                <p className="text-xs">{nexasites.sale} Terjual</p>
+              </div>
               <Button
                 href={nexasites.url}
-                variant="tertiary"
-                text="Beli Sekarang"
-                className="w-full lg:w-fit px-6 py-2"
-                icon={MdOutlineShoppingBag}
-                iconClassName="w-[1.10rem] h-[1.10rem]"
+                variant="primary"
+                text="Lihat"
+                className="w-full lg:w-fit"
+                icon={Eye}
+                iconClassName="w-4 h-4"
               />
             </div>
           </div>
