@@ -79,7 +79,7 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5">
+            <div className="text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
               <Cart hafnanmarts={currentItems} />
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between items-center mt-4 gap-6">
