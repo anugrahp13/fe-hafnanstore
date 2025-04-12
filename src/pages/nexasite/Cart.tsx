@@ -78,9 +78,9 @@ export const Cart: React.FC<CartNexasitesType> = ({
                 </picture>
               </div>
             </Link>
-            <div className="tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
-              <p className="text-base font-bold">{nexasites.name}</p>
-              <p className="text-xs">
+            <div className="tracking-tight line-clamp-2 mb-3 min-h-[3rem] overflow-hidden">
+              <p className="text-base font-bold truncate">{nexasites.name}</p>
+              <p className="text-xs truncate">
                 by{" "}
                 <Link to="#" className="font-semibold">
                   {nexasites.author}
