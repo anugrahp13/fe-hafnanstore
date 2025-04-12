@@ -19,14 +19,13 @@ const dataNexasite = [
       "The UI is visually appealing and simple to use.",
       "The website is responsive on all devices.",
     ],
-    nameTechStack: ["HTML", "CSS", "JavaScript", "TailwindCSS", "Figma", "Laravel"],
-    imageTechStack: [
-      "/image/skills/html5.svg",
-      "/image/skills/css3.svg",
-      "/image/skills/javascript.svg",
-      "/image/skills/tailwindcss.svg",
-      "/image/skills/figma.svg",
-      "/image/skills/laravel.svg",
+    nameTechStack: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TailwindCSS",
+      "Figma",
+      "Laravel",
     ],
   },
 ];
