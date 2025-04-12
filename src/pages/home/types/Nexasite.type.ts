@@ -11,5 +11,4 @@ export interface NexasitesProps {
   sale: number;
   features: string[];
   nameTechStack: string[];
-  imageTechStack: string[];
 }
