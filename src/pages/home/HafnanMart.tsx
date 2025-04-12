@@ -41,16 +41,19 @@ export const HafnanMarts: React.FC<HafnanMartsType> = ({ hafnanmarts }) => {
             key={hafnanmart.id}
           >
             <div className="mb-3 inline-block">
-              <picture>
-                <img
-                  src={hafnanmart.image || "/image/avatar/404.png"} // Jika kosong, gunakan default
-                  alt={`Thumbnails - ${hafnanmart.name}`}
-                  className="rounded-xl object-cover w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110"
-                  onError={(e) =>
-                    (e.currentTarget.src = "/image/avatar/404.png")
-                  }
-                />
-              </picture>
+              <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
+                <picture>
+                  <img
+                    src={hafnanmart.image || "/image/avatar/404.png"} // Jika kosong, gunakan default
+                    alt={`Thumbnails - ${hafnanmart.name}`}
+                    data-size="auto"
+                    className="lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110"
+                    onError={(e) =>
+                      (e.currentTarget.src = "/image/avatar/404.png")
+                    }
+                  />
+                </picture>
+              </div>
             </div>
             <div className="text-base lg:text-sm font-semibold text-primary dark:text-slate-200 hover:dark:text-white flex justify-between items-center">
               <span>{hafnanmart.category}</span>
