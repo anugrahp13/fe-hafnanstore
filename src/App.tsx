@@ -18,6 +18,9 @@ import "react-toastify/dist/ReactToastify.css";
 import dataNexasite from "./data/dataNexasite";
 import { Nexasites } from "./pages/nexasite/Nexasite";
 import { HafnanDigitals } from "./pages/hafnandigital/HafnanDigital";
+import { createSlug } from "./components/elements/CreateSlug";
+import { DetailProduct } from "./pages/detailproduct/DetailProduct";
+import { NexasitesProps } from "./types/Nexasite.type";
 
 function ProductsPage() {
   const { name } = useParams();
@@ -26,12 +29,32 @@ function ProductsPage() {
     return <HafnanMarts hafnanmarts={dataHafnanMart} />;
   } else if (name === "hafnan-digital") {
     return <HafnanDigitals hafnandigitals={dataHafnanDigital} />;
-  } else if (name === "nexa-site") {
+  } else if (name === "nexasite") {
     return <Nexasites nexasites={dataNexasite} />;
   } else {
     return <NotFound />;
   }
 }
+
+function ProductDetailPage() {
+  const { name, subname } = useParams();
+
+  // Validasi parameter
+  if (!name || !subname) return <NotFound />;
+
+  // Cari produk berdasarkan kategori (name) dan slug produk (subname)
+  let product: NexasitesProps | undefined;
+
+  if (name === "nexa-site") {
+    product = dataNexasite.find((item) => createSlug(item.name) === subname);
+  }
+  // Tambahkan else if untuk kategori lain jika diperlukan
+
+  if (!product) return <NotFound />;
+
+  return <DetailProduct nexasites={product} />;
+}
+
 function App() {
   return (
     <Layout>
@@ -42,6 +65,10 @@ function App() {
         <Route path="/contact" element={<Contact contacts={dataContact} />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/products/:name" element={<ProductsPage />} />
+        <Route
+          path="/products/:name/:subname"
+          element={<ProductDetailPage />}
+        />
         <Route path="/faq" element={<Faq faqs={dataFaq} />} />
         <Route
           path="/return-terms"
@@ -52,5 +79,4 @@ function App() {
     </Layout>
   );
 }
-
 export default App;
