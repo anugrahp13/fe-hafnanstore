@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Cart } from "./Cart";
 import dataFaq from "../../data/dataFaq";
-import { FaqsProps } from "./types/Faq.type";
+import { FaqsProps } from "../../types/Faq.type";
 
 interface FaqsType {
   faqs: FaqsProps[];

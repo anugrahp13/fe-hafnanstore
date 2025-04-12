@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
-import { FaqsProps } from "./types/Faq.type";
+import { FaqsProps } from "../../types/Faq.type";
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -23,9 +23,7 @@ export const Cart: React.FC<FaqsType> = ({ faqs }) => {
             className="w-full text-left py-3 flex justify-between items-center focus:outline-none"
           >
             <span className="font-semibold">{faq.question}</span>
-            <span>
-              {openIndex === index ? <ChevronUp /> : <ChevronDown/>}
-            </span>
+            <span>{openIndex === index ? <ChevronUp /> : <ChevronDown />}</span>
           </button>
           <motion.div
             initial={{ maxHeight: 0, opacity: 0 }}

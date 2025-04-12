@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { ReturnTermsProps } from "./types/ReturnTerms.type";
+import { ReturnTermsProps } from "../../types/ReturnTerms.type";
 import dataReturnTerms from "../../data/dataReturnTerms";
 import { Cart } from "./Cart";
 

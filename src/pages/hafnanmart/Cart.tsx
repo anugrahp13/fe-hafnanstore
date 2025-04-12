@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HafnanMartsProps } from "../home/types/HafnanMart.type";
+import { HafnanMartsProps } from "../../types/HafnanMart.type";
 import { LoaderCircle } from "lucide-react";
 
 interface CartHafnanMartsType {

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { SosmedProps } from "./types/Sosmed.type";
+import { SosmedProps } from "../../types/Sosmed.type";
 
 export const Sosmed: React.FC<SosmedProps> = ({
   to,

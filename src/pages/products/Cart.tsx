@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../components/elements/Button";
 import { createSlug } from "../../components/elements/CreateSlug";
-import { ProductsProps } from "./types/Products.type";
+import { ProductsProps } from "../../types/Products.type";
 import dataHafnanMart from "../../data/dataHafnanMart";
 import dataHafnanDigital from "../../data/dataHafnanDigital";
 import { useEffect, useState } from "react";

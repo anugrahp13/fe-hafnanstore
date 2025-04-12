@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { NexasitesProps } from "../home/types/Nexasite.type";
+import { NexasitesProps } from "../../types/Nexasite.type";
 import { Cart } from "./Cart";
 import dataNexasite from "../../data/dataNexasite";
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from "lucide-react";
 
 interface NexasitesType {
   nexasites: NexasitesProps[];
@@ -97,7 +102,7 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronsLeft className="w-4 h-4"/>
+                  <ChevronsLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() =>
@@ -106,7 +111,7 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronLeft className="w-4 h-4"/>
+                  <ChevronLeft className="w-4 h-4" />
                 </button>
                 <span className="text-sm font-semibold">
                   Halaman {currentPage} of {totalPages}
@@ -118,14 +123,14 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronRight className="w-4 h-4"/>
+                  <ChevronRight className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setCurrentPage(totalPages)}
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronsRight className="w-4 h-4"/>
+                  <ChevronsRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

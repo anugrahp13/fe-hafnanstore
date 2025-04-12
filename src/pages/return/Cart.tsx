@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { ReturnTermsProps } from "./types/ReturnTerms.type";
+import { ReturnTermsProps } from "../../types/ReturnTerms.type";
 
 interface ReturnTermsType {
   returnterms: ReturnTermsProps[];

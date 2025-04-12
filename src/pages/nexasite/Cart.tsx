@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "../../components/elements/Button";
-import { NexasitesProps } from "../home/types/Nexasite.type";
+import { NexasitesProps } from "../../types/Nexasite.type";
 import dataNexasite from "../../data/dataNexasite";
 import { Link } from "react-router-dom";
 import { Eye, LoaderCircle } from "lucide-react";

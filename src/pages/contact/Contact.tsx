@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { ContactsProps } from "./types/Contact.type";
+import { ContactsProps } from "../../types/Contact.type";
 import { SectionLeft } from "./SectionLeft";
 import dataContact from "../../data/dataContact";
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "../../components/elements/Button";
-import { HafnanDigitalsProps } from "../home/types/HafnanDigital.type";
+import { HafnanDigitalsProps } from "../../types/HafnanDigital.type";
 import { LoaderCircle, ShoppingBag } from "lucide-react";
 
 interface CartHafnanDigitalsType {

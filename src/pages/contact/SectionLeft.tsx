@@ -1,4 +1,4 @@
-import { ContactsProps } from "./types/Contact.type";
+import { ContactsProps } from "../../types/Contact.type";
 import { Button } from "../../components/elements/Button";
 import { MailOpen, MapPinCheckInside, Send } from "lucide-react";
 

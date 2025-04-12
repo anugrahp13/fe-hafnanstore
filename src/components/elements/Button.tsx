@@ -1,4 +1,4 @@
-import { ButtonProps } from "../elements/types/Button.type";
+import { ButtonProps } from "../../types/Button.type";
 import { Link } from "react-router-dom";
 
 export const Button: React.FC<ButtonProps> = ({

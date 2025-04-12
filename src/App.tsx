@@ -17,7 +17,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import dataNexasite from "./data/dataNexasite";
 import { Nexasites } from "./pages/nexasite/Nexasite";
-import { HafnanDigitals } from "./pages/hafnandigital/Hafnandigital";
+import { HafnanDigitals } from "./pages/hafnandigital/HafnanDigital";
 
 function ProductsPage() {
   const { name } = useParams();

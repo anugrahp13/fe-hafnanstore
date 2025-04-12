@@ -1,6 +1,6 @@
 import { Cart } from "./Cart";
 import dataHafnanMart from "../../data/dataHafnanMart";
-import { HafnanMartsProps } from "../home/types/HafnanMart.type";
+import { HafnanMartsProps } from "../../types/HafnanMart.type";
 import { useEffect, useState } from "react";
 import {
   ChevronLeft,
@@ -106,7 +106,7 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronsLeft className="w-4 h-4"/>
+                  <ChevronsLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() =>
@@ -115,7 +115,7 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronLeft className="w-4 h-4"/>
+                  <ChevronLeft className="w-4 h-4" />
                 </button>
                 <span className="text-sm font-semibold">
                   Halaman {currentPage} of {totalPages}
@@ -127,14 +127,14 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronRight className="w-4 h-4"/>
+                  <ChevronRight className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setCurrentPage(totalPages)}
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
-                  <ChevronsRight className="w-4 h-4"/>
+                  <ChevronsRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
