@@ -4,7 +4,7 @@ const dataNexasite = [
     name: "Simple Landing Page Portfolio",
     author: "agrptio",
     category: "Landing Page",
-    image: "/image/products/hafnandigital/VIDEO AFFILIATE PRODUK TERLARIS.png",
+    image: "/image/products/nexasite/simple-portfolio.png",
     description:
       " is an online platform that aims to introduce and promote various cultures from various regions in Indonesia, known as the Archipelago. This website provides information related to culture in Indonesia such as traditional dance, traditional houses, typical cuisine and other cultural categories.",
     role: "Frontend",
