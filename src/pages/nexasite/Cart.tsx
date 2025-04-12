@@ -3,7 +3,8 @@ import { Button } from "../../components/elements/Button";
 import { NexasitesProps } from "../../types/Nexasite.type";
 import dataNexasite from "../../data/dataNexasite";
 import { Link } from "react-router-dom";
-import { Eye, LoaderCircle } from "lucide-react";
+import { LoaderCircle, Video } from "lucide-react";
+import { createSlug } from "../../components/elements/CreateSlug";
 
 interface CartNexasitesType {
   nexasites: NexasitesProps[];
@@ -66,7 +67,10 @@ export const Cart: React.FC<CartNexasitesType> = ({
             className="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1 grid gap-1"
             key={nexasites.id}
           >
-            <Link to="#" className="mb-3 inline-block">
+            <Link
+              to={`/products/nexasite/${createSlug(nexasites.name)}`}
+              className="mb-3 inline-block"
+            >
               <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
                 <picture>
                   <img
@@ -87,7 +91,7 @@ export const Cart: React.FC<CartNexasitesType> = ({
                 </Link>
               </p>
             </div>
-            <div className="flex justify-between items-center text-sm gap-4">
+            <div className="flex flex-wrap justify-between items-center text-sm gap-4">
               <div className="tracking-tight line-clamp-2 min-h-[3rem]">
                 <p className="text-lg font-bold">
                   Rp.{nexasites.price.toLocaleString("id-ID")}
@@ -97,9 +101,9 @@ export const Cart: React.FC<CartNexasitesType> = ({
               <Button
                 href={nexasites.url}
                 variant="primary"
-                text="Lihat"
+                text="Lihat Demo"
                 className="w-full lg:w-fit"
-                icon={Eye}
+                icon={Video}
                 iconClassName="w-4 h-4"
               />
             </div>
