@@ -65,20 +65,23 @@ export const Cart: React.FC<CartHafnanDigitalsType> = ({
             key={hafnandigital.id}
           >
             <div className="mb-3 inline-block">
-              <picture>
-                <img
-                  src={hafnandigital.image || "/image/avatar/404.png"} // Jika kosong, gunakan default
-                  alt={`Thumbnails - ${hafnandigital.name}`}
-                  className="rounded-xl object-cover w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110"
-                  onError={(e) =>
-                    (e.currentTarget.src = "/image/avatar/404.png")
-                  }
-                />
-              </picture>
+              <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
+                <picture>
+                  <img
+                    src={hafnandigital.image || "/image/avatar/404.png"} // Jika kosong, gunakan default
+                    alt={`Thumbnails - ${hafnandigital.name}`}
+                    data-size="auto"
+                    className="lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 lazyloaded transition-transform hover:scale-110"
+                    onError={(e) =>
+                      (e.currentTarget.src = "/image/avatar/404.png")
+                    }
+                  />
+                </picture>
+              </div>
             </div>
-            <h3 className="text-xl lg:text-lg font-bold tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
+            <div className="text-xl lg:text-lg font-bold tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
               <span>{hafnandigital.name}</span>
-            </h3>
+            </div>
             <div className="flex flex-wrap justify-center items-center text-sm gap-4">
               <Button
                 href={hafnandigital.url}
