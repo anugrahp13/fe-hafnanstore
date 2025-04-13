@@ -10,7 +10,7 @@ export const Cart: React.FC<ReturnTermsType> = ({ returnterms }) => {
     <>
       <div className="space-y-6">
         {returnterms.map((term) => (
-          <div key={term.id} className="border-b pb-4">
+          <div key={term.id} className="pb-4">
             <h2 className="font-bold text-xl">{term.question}</h2>
             <div className="mt-2 text-gray-600 dark:text-white">
               {Array.isArray(term.answer) ? (
