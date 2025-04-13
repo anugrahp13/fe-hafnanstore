@@ -55,7 +55,7 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
           <title>Product – Hafnan Digital</title>
         </Helmet>
       </HelmetProvider>
-      <section className="my-52 dark:bg-dark">
+      <section className="my-32 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-7xl flex items-center justify-center">
           <div className="text-center grid gap-10">
             <div className="text-sm text-primary dark:text-primary grid gap-3">
