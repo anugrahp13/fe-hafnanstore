@@ -4,11 +4,22 @@ export interface NexasitesProps {
   author: string;
   category: string;
   image: string;
-  description: string;
+  description: string[];
   role: string;
   url: string;
   price: number;
   sale: number;
-  features: string[];
   nameTechStack: string[];
+  features: {
+    boldText: string;
+    normalText: string;
+  }[];
+  compatibles: {
+    boldText: string;
+    normalText: string;
+  }[];
+  chooses: {
+    boldText: string;
+    normalText: string;
+  }[];
 }
