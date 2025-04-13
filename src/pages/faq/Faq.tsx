@@ -19,10 +19,10 @@ export const Faq: React.FC<FaqsType> = () => {
           <title>FAQ - Hafnan Store</title>
         </Helmet>
       </HelmetProvider>
-      <section className="my-52 dark:bg-dark">
+      <section className="my-32 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-7xl flex flex-col items-center justify-center">
           <div className="lg:w-2/3 max-w-4xl text-center grid gap-10">
-            <div className="bg-gray-200 dark:bg-slate-800 p-6 flex flex-col md:flex-row gap-10 border rounded-lg items-center">
+            <div className="flex flex-col md:flex-row gap-10 items-center shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1">
               <div className="w-full">
                 <div className="grid gap-5">
                   <h2 className="text-2xl font-bold">
