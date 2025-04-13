@@ -94,7 +94,8 @@ export const Cart: React.FC<CartNexasitesType> = ({
             <div className="flex flex-wrap justify-between items-center text-sm gap-4">
               <div className="tracking-tight line-clamp-2 min-h-[3rem]">
                 <p className="text-lg font-bold">
-                  Rp.{nexasites.price.toLocaleString("id-ID")}
+                  Rp. {""}
+                  {nexasites.price.toLocaleString("id-ID")}
                 </p>
                 <p className="text-xs">{nexasites.sale} Terjual</p>
               </div>
