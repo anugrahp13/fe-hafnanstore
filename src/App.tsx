@@ -45,7 +45,7 @@ function ProductDetailPage() {
   // Cari produk berdasarkan kategori (name) dan slug produk (subname)
   let product: NexasitesProps | undefined;
 
-  if (name === "nexa-site") {
+  if (name === "nexasite") {
     product = dataNexasite.find((item) => createSlug(item.name) === subname);
   }
   // Tambahkan else if untuk kategori lain jika diperlukan
