@@ -1,3 +1,8 @@
+export interface InstructionItem {
+  title: string;
+  commands: string; // Bisa juga dibuat string | string[] jika ingin fleksibel
+}
+
 export interface NexasitesProps {
   id: number;
   name: string;
@@ -10,6 +15,12 @@ export interface NexasitesProps {
   price: number;
   sale: number;
   nameTechStack: string[];
+  imageTechStack: string[];
+  linkTechStack: string[];
+  nameTool: string[];
+  imageTool: string[];
+  linkTool: string[];
+  instructions: InstructionItem[];
   features: {
     boldText: string;
     normalText: string;
