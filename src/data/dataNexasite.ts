@@ -12,14 +12,38 @@ const dataNexasite = [
     role: "Frontend",
     url: "https://lynk.id/hafnandigital/0M4lGbY",
     price: 100000,
-    sale: 10,
-    nameTechStack: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TailwindCSS",
-      "Figma",
-      "Laravel",
+    sale: 2,
+    nameTechStack: ["ReactJS", "TypeScript", "TailwindCSS"],
+    imageTechStack: [
+      "/image/techstack/react-js.svg",
+      "/image/techstack/typescript.svg",
+      "/image/techstack/tailwindcss.svg",
+    ],
+    linkTechStack: [
+      "https://react.dev/",
+      "https://www.typescriptlang.org/",
+      "https://tailwindcss.com/",
+    ],
+    nameTool: ["Visual Studio Code", "Chrome"],
+    imageTool: [
+      "/image/techstack/visual-studio.svg",
+      "/image/techstack/chrome.svg",
+      "/image/techstack/tailwindcss.svg",
+    ],
+    linkTool: [
+      "https://code.visualstudio.com/download",
+      "https://www.google.com/chrome/",
+    ],
+    instructions: [
+      {
+        title:
+          "Kamu sudah download filenya? Silahkan lakukan install dependencies terlebih dahulu",
+        commands: "npm install",
+      },
+      {
+        title: "Jalankan proyek dengan perintah berikut",
+        commands: "npm run dev",
+      },
     ],
     features: [
       {
