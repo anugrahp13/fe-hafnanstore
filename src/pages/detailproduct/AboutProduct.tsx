@@ -7,7 +7,7 @@ export const AboutProduct = ({ nexasites }: DetailProductProps) => {
   return (
     <>
       <div className="text-2xl font-bold">Tentang</div>
-      <div className="leading-relaxed text-base space-y-2">
+      <div className="text-base space-y-2">
         <span className="font-bold">{nexasites.category}</span>{" "}
         <span className="text-slate-800 dark:text-white">
           {nexasites.description[0]}
