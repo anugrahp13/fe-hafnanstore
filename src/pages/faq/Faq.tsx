@@ -1,17 +1,16 @@
+// pages/faq/Faq.tsx
 import { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Cart } from "./Cart";
-import dataFaq from "../../data/dataFaq";
-import { FaqsProps } from "../../types/Faq.type";
+import { useFaqStore } from "../../stores/useFaqStore";
 
-interface FaqsType {
-  faqs: FaqsProps[];
-}
+export const Faq = () => {
+  useFaqStore();
 
-export const Faq: React.FC<FaqsType> = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <HelmetProvider>
@@ -29,7 +28,7 @@ export const Faq: React.FC<FaqsType> = () => {
                     Frequently Asked Question (FAQ)
                   </h2>
                   <div className="text-gray-700 dark:text-white text-left leading-7 space-y-4">
-                    <Cart faqs={dataFaq} />
+                    <Cart />
                   </div>
                 </div>
               </div>
