@@ -1,57 +1,37 @@
-import { Cart } from "./Cart";
-import dataHafnanMart from "../../data/dataHafnanMart";
-import { HafnanMartsProps } from "../../types/HafnanMart.type";
-import { useEffect, useState } from "react";
+// pages/hafnanmart/HafnanMart.tsx
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Cart } from './Cart';
 import {
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
-} from "lucide-react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+} from 'lucide-react';
+import { useEffect } from 'react';
+import { useHafnanMartStore } from '../../stores/useHafnanMartsStore';
 
-interface HafnanMartsType {
-  hafnanmarts: HafnanMartsProps[];
-}
-
-export const HafnanMarts: React.FC<HafnanMartsType> = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // State untuk input pencarian
-  const [filteredProducts, setFilteredProducts] = useState<HafnanMartsProps[]>(
-    []
-  ); // State untuk hasil pencarian
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10); // Default to "full"
+export const HafnanMarts = () => {
+  const {
+    filteredProducts,
+    currentPage,
+    itemsPerPage,
+    searchTerm,
+    setSearchTerm,
+    setCurrentPage,
+    setItemsPerPage,
+  } = useHafnanMartStore();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage, itemsPerPage]);
 
-  useEffect(() => {
-    if (!searchTerm.trim()) {
-      setFilteredProducts(dataHafnanMart);
-    } else {
-      const results = dataHafnanMart.filter(
-        (product) =>
-          product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          product.category?.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredProducts(results);
-    }
-    setCurrentPage(1);
-  }, [searchTerm]);
-
-  // Total produk tersedia
+  // Calculate pagination
   const totalItems = filteredProducts.length;
-
-  // Calculate indexes for pagination
   const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
   const indexOfLastItem = indexOfFirstItem + itemsPerPage;
-  const currentItems = filteredProducts.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
-
+  const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   return (
     <>
       <HelmetProvider>
@@ -80,7 +60,7 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
               />
             </div>
             <div className="text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              <Cart hafnanmarts={currentItems} />
+              <Cart products={currentItems} />
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between items-center mt-4 gap-6">
               <div className="flex items-center gap-2">
@@ -90,13 +70,12 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                   onChange={(e) => {
                     const value = Number(e.target.value);
                     setItemsPerPage(value === totalItems ? totalItems : value);
-                    setCurrentPage(1);
                   }}
                   className="border px-2 py-1 rounded-lg dark:bg-dark dark:text-white"
                 >
-                  <option value={10}>10</option>
-                  <option value={20}>20</option>
-                  <option value={30}>30</option>
+                  <option value={8}>8</option>
+                  <option value={16}>16</option>
+                  <option value={24}>24</option>
                   <option value={totalItems}>Full</option>
                 </select>
               </div>
@@ -109,9 +88,7 @@ export const HafnanMarts: React.FC<HafnanMartsType> = () => {
                   <ChevronsLeft className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() =>
-                    setCurrentPage((prev) => Math.max(prev - 1, 1))
-                  }
+                  onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
