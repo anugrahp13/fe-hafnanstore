@@ -1,16 +1,13 @@
+// pages/return/ReturnTerms.tsx
 import { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { ReturnTermsProps } from "../../types/ReturnTerms.type";
-import dataReturnTerms from "../../data/dataReturnTerms";
 import { Cart } from "./Cart";
 
-interface ReturnTermsType {
-  returnterms: ReturnTermsProps[];
-}
-export const ReturnTerms: React.FC<ReturnTermsType> = () => {
+export const ReturnTerms = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <HelmetProvider>
@@ -26,7 +23,7 @@ export const ReturnTerms: React.FC<ReturnTermsType> = () => {
                 <div className="grid gap-5">
                   <h2 className="text-2xl font-bold">Syarat dan Ketentuan</h2>
                   <div className="text-gray-700 dark:text-white text-left leading-7 space-y-4">
-                    <Cart returnterms={dataReturnTerms} />
+                    <Cart />
                   </div>
                 </div>
               </div>
