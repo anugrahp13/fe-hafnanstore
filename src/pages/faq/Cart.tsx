@@ -1,19 +1,17 @@
-/* eslint-disable react/prop-types */
-
+// components/Cart.tsx
 import { useState } from "react";
-import { FaqsProps } from "../../types/Faq.type";
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useFaqStore } from "../../stores/useFaqStore";
 
-interface FaqsType {
-  faqs: FaqsProps[];
-}
-export const Cart: React.FC<FaqsType> = ({ faqs }) => {
+export const Cart = () => {
+  const { faqs } = useFaqStore();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   return (
     <>
       {faqs.map((faq, index) => (
