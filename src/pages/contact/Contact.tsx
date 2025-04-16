@@ -1,16 +1,17 @@
+// pages/contact/Contact.tsx
 import { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { ContactsProps } from "../../types/Contact.type";
 import { SectionLeft } from "./SectionLeft";
-import dataContact from "../../data/dataContact";
+import { useContactStore } from "../../stores/useContactStore";
 
-interface ContactsType {
-  contacts: ContactsProps[];
-}
-export const Contact: React.FC<ContactsType> = () => {
+
+export const Contact = () => {
+  useContactStore();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <HelmetProvider>
@@ -21,8 +22,8 @@ export const Contact: React.FC<ContactsType> = () => {
       <section className="my-52 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-7xl flex flex-col items-center justify-center">
           <div className="max-w-4xl text-center grid gap-10">
-            <div className=" flex flex-col md:flex-row gap-10 items-center shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1">
-              <SectionLeft contacts={dataContact} />
+            <div className="flex flex-col md:flex-row gap-10 items-center shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1">
+              <SectionLeft />
               <div className="w-full md:w-3/4 order-1 md:order-2">
                 <div className="grid gap-5">
                   <h2 className="text-2xl font-bold">Contact</h2>
