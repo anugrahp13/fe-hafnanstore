@@ -1,12 +1,11 @@
-import { ContactsProps } from "../../types/Contact.type";
-import { Button } from "../../components/elements/Button";
+// components/SectionLeft.tsx
 import { MailOpen, MapPinCheckInside, Send } from "lucide-react";
+import { useContactStore } from "../../stores/useContactStore";
+import { Button } from "../../components/elements/Button";
 
-interface ContactsType {
-  contacts: ContactsProps[];
-}
+export const SectionLeft = () => {
+  const { contacts } = useContactStore();
 
-export const SectionLeft: React.FC<ContactsType> = ({ contacts }) => {
   return (
     <>
       {contacts.map((contact) => (
