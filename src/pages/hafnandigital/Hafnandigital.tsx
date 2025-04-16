@@ -1,53 +1,40 @@
-import { useEffect, useState } from "react";
-import dataHafnanDigital from "../../data/dataHafnanDigital";
-import { HafnanDigitalsProps } from "../../types/HafnanDigital.type";
-import { Cart } from "./Cart";
+// pages/hafnandigital/HafnanDigital.tsx
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Cart } from "./Cart";
 import {
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
+import { useEffect } from "react";
+import { useHafnanDigitalStore } from "../../stores/useHafnanDigitalStore";
 
-interface HafnanDigitalsType {
-  hafnandigitals: HafnanDigitalsProps[];
-}
-
-export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // State untuk input pencarian
-  const [filteredProducts, setFilteredProducts] = useState(dataHafnanDigital); // State untuk hasil pencarian
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(8); // Default to "full"
+export const HafnanDigitals = () => {
+  const {
+    filteredProducts,
+    currentPage,
+    itemsPerPage,
+    searchTerm,
+    setSearchTerm,
+    setCurrentPage,
+    setItemsPerPage,
+  } = useHafnanDigitalStore();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage, itemsPerPage]);
 
-  useEffect(() => {
-    if (!searchTerm.trim()) {
-      setFilteredProducts(dataHafnanDigital);
-    } else {
-      const results = dataHafnanDigital.filter((product) =>
-        product.name?.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredProducts(results);
-    }
-    setCurrentPage(1);
-  }, [searchTerm]);
-
-  // Total produk tersedia
+  // Calculate pagination
   const totalItems = filteredProducts.length;
-
-  // Calculate indexes for pagination
   const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
   const indexOfLastItem = indexOfFirstItem + itemsPerPage;
   const currentItems = filteredProducts.slice(
     indexOfFirstItem,
     indexOfLastItem
   );
-
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   return (
     <>
       <HelmetProvider>
@@ -76,7 +63,7 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
               />
             </div>
             <div className="text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              <Cart hafnandigitals={currentItems} />
+              <Cart products={currentItems} />
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between items-center mt-4 gap-6">
               <div className="flex items-center gap-2">
@@ -86,13 +73,12 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
                   onChange={(e) => {
                     const value = Number(e.target.value);
                     setItemsPerPage(value === totalItems ? totalItems : value);
-                    setCurrentPage(1);
                   }}
                   className="border px-2 py-1 rounded-lg dark:bg-dark dark:text-white"
                 >
-                  <option value={10}>10</option>
-                  <option value={20}>20</option>
-                  <option value={30}>30</option>
+                  <option value={8}>8</option>
+                  <option value={16}>16</option>
+                  <option value={24}>24</option>
                   <option value={totalItems}>Full</option>
                 </select>
               </div>
@@ -105,9 +91,10 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
                   <ChevronsLeft className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() =>
-                    setCurrentPage((prev) => Math.max(prev - 1, 1))
-                  }
+                  onClick={() => {
+                    const newPage = currentPage - 1;
+                    if (newPage >= 1) setCurrentPage(newPage);
+                  }}
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
@@ -117,9 +104,10 @@ export const HafnanDigitals: React.FC<HafnanDigitalsType> = () => {
                   Halaman {currentPage} of {totalPages}
                 </span>
                 <button
-                  onClick={() =>
-                    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-                  }
+                  onClick={() => {
+                    const newPage = currentPage + 1;
+                    if (newPage <= totalPages) setCurrentPage(newPage);
+                  }}
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
