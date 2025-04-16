@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#folder
+src/data/
+src/components/elements/
+src/pages/
+src/store/
+src/types/
