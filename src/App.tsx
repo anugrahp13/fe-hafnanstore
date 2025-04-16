@@ -5,54 +5,49 @@ import { Home } from "./pages/home/Home";
 import { Contact } from "./pages/contact/Contact";
 import { About } from "./pages/about/About";
 import { Products } from "./pages/products/Products";
-import { HafnanMarts } from "./pages/hafnanmart/HafnanMart";
-import dataHafnanMart from "./data/dataHafnanMart";
-import dataHafnanDigital from "./data/dataHafnanDigital";
-import dataContact from "./data/dataContact";
 import { Faq } from "./pages/faq/Faq";
-import dataFaq from "./data/dataFaq";
 import { ReturnTerms } from "./pages/return/ReturnTerms";
-import dataReturnTerms from "./data/dataReturnTerms";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import dataNexasite from "./data/dataNexasite";
 import { Nexasites } from "./pages/nexasite/Nexasite";
 import { HafnanDigitals } from "./pages/hafnandigital/HafnanDigital";
-import { createSlug } from "./components/elements/CreateSlug";
 import { DetailProduct } from "./pages/detailproduct/DetailProduct";
-import { NexasitesProps } from "./types/Nexasite.type";
+import { useNexasiteStore } from "./stores/useDetailProductStore";
+import { HafnanMarts } from "./pages/hafnanmart/HafnanMart";
+
+// Type untuk route params
+type ProductsParams = {
+  name: string;
+};
+
+type ProductDetailParams = {
+  name: string;
+  productSlug: string;
+};
 
 function ProductsPage() {
-  const { name } = useParams();
+  const { name } = useParams<ProductsParams>();
 
-  if (name === "hafnan-mart") {
-    return <HafnanMarts hafnanmarts={dataHafnanMart} />;
-  } else if (name === "hafnan-digital") {
-    return <HafnanDigitals hafnandigitals={dataHafnanDigital} />;
-  } else if (name === "nexasite") {
-    return <Nexasites nexasites={dataNexasite} />;
-  } else {
-    return <NotFound />;
-  }
+  const productPages = {
+    "hafnan-mart": <HafnanMarts />,
+    "hafnan-digital": <HafnanDigitals />,
+    nexasite: <Nexasites />,
+  };
+
+  return productPages[name as keyof typeof productPages] || <NotFound />;
 }
 
 function ProductDetailPage() {
-  const { name, subname } = useParams();
+  const { name, productSlug } = useParams<ProductDetailParams>();
+  const { getProductBySlug } = useNexasiteStore();
 
-  // Validasi parameter
-  if (!name || !subname) return <NotFound />;
+  const product = getProductBySlug(productSlug || "");
 
-  // Cari produk berdasarkan kategori (name) dan slug produk (subname)
-  let product: NexasitesProps | undefined;
-
-  if (name === "nexasite") {
-    product = dataNexasite.find((item) => createSlug(item.name) === subname);
+  if (!name || !productSlug || !product) {
+    return <NotFound />;
   }
-  // Tambahkan else if untuk kategori lain jika diperlukan
 
-  if (!product) return <NotFound />;
-
-  return <DetailProduct nexasites={product} />;
+  return <DetailProduct />; // Komponen akan ambil data dari store
 }
 
 function App() {
@@ -62,21 +57,25 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact contacts={dataContact} />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/return-terms" element={<ReturnTerms />} />
+
+        {/* Product Category Routes */}
         <Route path="/products/:name" element={<ProductsPage />} />
+
+        {/* Product Detail Routes */}
         <Route
-          path="/products/:name/:subname"
+          path="/products/:name/:productSlug"
           element={<ProductDetailPage />}
         />
-        <Route path="/faq" element={<Faq faqs={dataFaq} />} />
-        <Route
-          path="/return-terms"
-          element={<ReturnTerms returnterms={dataReturnTerms} />}
-        />
+
+        {/* 404 Catch All */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </Layout>
   );
 }
+
 export default App;
