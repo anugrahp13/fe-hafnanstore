@@ -1,53 +1,40 @@
-import { useEffect, useState } from "react";
+// pages/nexasite/Nexasite.tsx
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { NexasitesProps } from "../../types/Nexasite.type";
 import { Cart } from "./Cart";
-import dataNexasite from "../../data/dataNexasite";
 import {
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
+import { useEffect } from "react";
+import { useNexasiteStore } from "../../stores/useNexasiteStore";
 
-interface NexasitesType {
-  nexasites: NexasitesProps[];
-}
-
-export const Nexasites: React.FC<NexasitesType> = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // State untuk input pencarian
-  const [filteredProducts, setFilteredProducts] = useState(dataNexasite); // State untuk hasil pencarian
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(8); // Default to "full"
+export const Nexasites = () => {
+  const {
+    filteredProducts,
+    currentPage,
+    itemsPerPage,
+    searchTerm,
+    setSearchTerm,
+    setCurrentPage,
+    setItemsPerPage,
+  } = useNexasiteStore();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage, itemsPerPage]);
 
-  useEffect(() => {
-    if (!searchTerm.trim()) {
-      setFilteredProducts(dataNexasite);
-    } else {
-      const results = dataNexasite.filter((product) =>
-        product.name?.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredProducts(results);
-    }
-    setCurrentPage(1);
-  }, [searchTerm]);
-
-  // Total produk tersedia
+  // Calculate pagination
   const totalItems = filteredProducts.length;
-
-  // Calculate indexes for pagination
   const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
   const indexOfLastItem = indexOfFirstItem + itemsPerPage;
   const currentItems = filteredProducts.slice(
     indexOfFirstItem,
     indexOfLastItem
   );
-
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   return (
     <>
       <HelmetProvider>
@@ -76,7 +63,7 @@ export const Nexasites: React.FC<NexasitesType> = () => {
               />
             </div>
             <div className="text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              <Cart nexasites={currentItems} />
+              <Cart products={currentItems} />
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between items-center mt-4 gap-6">
               <div className="flex items-center gap-2">
@@ -86,13 +73,12 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   onChange={(e) => {
                     const value = Number(e.target.value);
                     setItemsPerPage(value === totalItems ? totalItems : value);
-                    setCurrentPage(1);
                   }}
                   className="border px-2 py-1 rounded-lg dark:bg-dark dark:text-white"
                 >
-                  <option value={10}>10</option>
-                  <option value={20}>20</option>
-                  <option value={30}>30</option>
+                  <option value={8}>8</option>
+                  <option value={16}>16</option>
+                  <option value={24}>24</option>
                   <option value={totalItems}>Full</option>
                 </select>
               </div>
@@ -105,9 +91,10 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   <ChevronsLeft className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() =>
-                    setCurrentPage((prev) => Math.max(prev - 1, 1))
-                  }
+                  onClick={() => {
+                    const newPage = currentPage - 1;
+                    if (newPage >= 1) setCurrentPage(newPage);
+                  }}
                   disabled={currentPage === 1}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
@@ -117,9 +104,10 @@ export const Nexasites: React.FC<NexasitesType> = () => {
                   Halaman {currentPage} of {totalPages}
                 </span>
                 <button
-                  onClick={() =>
-                    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-                  }
+                  onClick={() => {
+                    const newPage = currentPage + 1;
+                    if (newPage <= totalPages) setCurrentPage(newPage);
+                  }}
                   disabled={currentPage === totalPages}
                   className="px-3 py-1 bg-primary text-white rounded disabled:opacity-50"
                 >
