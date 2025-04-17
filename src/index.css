@@ -34,6 +34,12 @@ body {
     /* background-color: #282c34; */
     border-radius: 10px;
   }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 .underline-animation {
@@ -57,7 +63,7 @@ body {
 }
 
 :root {
-  --underline-color: #1F509A;
+  --underline-color: #1f509a;
 }
 
 .dark :root {
