@@ -41,3 +41,4 @@ export const useNexasiteStore = create<NexasiteStore>((_set, get) => ({
       : { ...product, creator: undefined };
   },
 }));
+
