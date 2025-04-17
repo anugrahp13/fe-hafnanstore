@@ -14,6 +14,7 @@ import { LanguageProduct } from "./LanguageProduct";
 import { PriceProduct } from "./PriceProduct";
 import { CreatorProduct } from "./CreatorProduct";
 import { useNexasiteStore } from "../../stores/useDetailProductStore";
+import { ReviewProduct } from "./ReviewProduct";
 
 export const DetailProduct = () => {
   const { productSlug } = useParams();
@@ -45,7 +46,7 @@ export const DetailProduct = () => {
         </Helmet>
       </HelmetProvider>
       <section className="my-32 dark:bg-dark">
-        <div className="container mx-auto p-4 lg:max-w-7xl">
+        <div className="container mx-auto p-4 lg:max-w-7xl space-y-6">
           {/* Product Content */}
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-3/4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1">
@@ -131,6 +132,9 @@ export const DetailProduct = () => {
                 <CreatorProduct nexasites={product} />
               </div>
             </div>
+          </div>
+          <div className="grid justify-center items-center gap-2">
+            <ReviewProduct nexasites={product} />
           </div>
         </div>
       </section>
