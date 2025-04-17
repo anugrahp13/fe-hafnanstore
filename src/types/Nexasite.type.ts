@@ -15,6 +15,15 @@ export interface CreatorProps {
   iconMedia: LucideIcon[];
 }
 
+export interface ReviewProps {
+  id: number;
+  productId: number; // Tambahkan ini untuk relasi dengan produk
+  name: string;
+  image: string;
+  rating: number;
+  review: string;
+}
+
 export interface NexasitesProps {
   id: number;
   name: string;
@@ -27,6 +36,7 @@ export interface NexasitesProps {
   sale: number;
   author: string;
   creator?: CreatorProps;
+  review?: ReviewProps;
   nameTechStack: string[];
   imageTechStack: string[];
   linkTechStack: string[];
