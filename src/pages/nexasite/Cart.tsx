@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LoaderCircle, Video } from "lucide-react";
 import { NexasitesProps } from "../../types/Nexasite.type";
-import { createSlug } from "../../components/elements/CreateSlug";
 import { Button } from "../../components/elements/Button";
-
+import { useNexasiteStore } from "../../stores/useNexasiteStore";
 
 interface CartProps {
   products: NexasitesProps[];
@@ -13,6 +12,9 @@ interface CartProps {
 
 export const Cart = ({ products }: CartProps) => {
   const [isLoading, setIsLoading] = useState(true);
+  const resolveCreatorLink = useNexasiteStore(
+    (state) => state.resolveCreatorLink
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -55,33 +57,38 @@ export const Cart = ({ products }: CartProps) => {
     <>
       {products.map((product) => (
         <div
-          className="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1 grid gap-1"
           key={product.id}
+          className="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1 grid gap-1"
         >
           <Link
-            to={`/products/nexasite/${createSlug(product.name)}`}
-            className="mb-3 inline-block"
+            to={`/products/nexasite/${product.name
+              .toLowerCase()
+              .replace(/\s+/g, "-")}`}
           >
             <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
               <picture>
                 <img
                   src={product.image}
-                  data-size="auto"
                   alt={product.name}
-                  className="lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110"
+                  className="w-full rounded-xl object-cover brightness-90 dark:brightness-100 hover:scale-110 transition-transform"
                 />
               </picture>
             </div>
           </Link>
+
           <div className="tracking-tight line-clamp-2 mb-3 min-h-[3rem] overflow-hidden">
-            <p className="text-base font-bold truncate">{product.name}</p>
-            <p className="text-xs truncate">
+            <h3 className="text-2xl font-bold truncate">{product.name}</h3>
+            <p className="text-sm">
               by{" "}
-              <Link to="#" className="font-semibold">
-                {product.author}
+              <Link
+                to={resolveCreatorLink(product)}
+                className="text-primary dark:text-white dark:hover:underline font-semibold"
+              >
+                {product.creator?.name || product.author}
               </Link>
             </p>
           </div>
+
           <div className="flex flex-wrap justify-between items-center text-sm gap-4">
             <div className="tracking-tight line-clamp-2 min-h-[3rem]">
               <p className="text-lg font-bold">
