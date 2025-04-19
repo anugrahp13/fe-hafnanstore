@@ -14,6 +14,7 @@ import { HafnanDigitals } from "./pages/hafnandigital/HafnanDigital";
 import { DetailProduct } from "./pages/detailproduct/DetailProduct";
 import { useNexasiteStore } from "./stores/useDetailProductStore";
 import { HafnanMarts } from "./pages/hafnanmart/HafnanMart";
+import { Creator } from "./pages/creator/Creator";
 
 // Type untuk route params
 type ProductsParams = {
@@ -69,6 +70,9 @@ function App() {
           path="/products/:name/:productSlug"
           element={<ProductDetailPage />}
         />
+
+        <Route path="/creators" element={<Creator />} />
+        <Route path="/creator/:username" element={<Creator />} />
 
         {/* 404 Catch All */}
         <Route path="*" element={<NotFound />} />
