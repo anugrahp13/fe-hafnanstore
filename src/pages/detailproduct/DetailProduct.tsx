@@ -15,6 +15,7 @@ import { PriceProduct } from "./PriceProduct";
 import { CreatorProduct } from "./CreatorProduct";
 import { useNexasiteStore } from "../../stores/useDetailProductStore";
 import { ReviewProduct } from "./ReviewProduct";
+import { InformationProduct } from "./InformationProduct";
 
 export const DetailProduct = () => {
   const { productSlug } = useParams();
@@ -61,7 +62,7 @@ export const DetailProduct = () => {
                       <Link
                         to={
                           product.creator
-                            ? `/creator/${product.creator.id}`
+                            ? `/creator/${product.creator.username}`
                             : "#"
                         }
                         className="text-primary dark:text-white dark:hover:underline font-semibold"
@@ -122,14 +123,17 @@ export const DetailProduct = () => {
                 {/* Bagian Harga */}
                 <PriceProduct nexasites={product} />
 
+                {/* Bagian Creator */}
+                <CreatorProduct nexasites={product} />
+
                 {/* Bagian Language Programming */}
                 <LanguageProduct nexasites={product} />
 
                 {/* Bagian Tool */}
                 <ToolProduct nexasites={product} />
 
-                {/* Bagian Creator */}
-                <CreatorProduct nexasites={product} />
+                {/* Bagian Information Product */}
+                <InformationProduct nexasites={product} />
               </div>
             </div>
           </div>
