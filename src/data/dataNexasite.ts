@@ -1,4 +1,3 @@
-
 const dataNexasite = [
   {
     id: 1,
@@ -13,7 +12,7 @@ const dataNexasite = [
     url: "https://lynk.id/hafnandigital/0M4lGbY",
     price: 25000,
     sale: 2,
-    author: "agrptio",
+    author: "Anugrah Prastyo",
     nameTechStack: ["ReactJS", "TypeScript", "TailwindCSS"],
     imageTechStack: [
       "/image/techstack/react-js.svg",
@@ -34,6 +33,16 @@ const dataNexasite = [
     linkTool: [
       "https://code.visualstudio.com/download",
       "https://www.google.com/chrome/",
+    ],
+    information: [
+      {
+        lastUpdate: "10 April 2025",
+        published: "19 April 2025",
+        resolution: "Yes",
+        browser: ["Chrome", "Firefox", "Opera", "Safari"],
+        fileIncluded: ["CSS File", "JS File"],
+        layout: "Responsive",
+      },
     ],
     instructions: [
       {
@@ -147,6 +156,16 @@ const dataNexasite = [
     linkTool: [
       "https://code.visualstudio.com/download",
       "https://www.google.com/chrome/",
+    ],
+    information: [
+      {
+        lastUpdate: "10 April 2025",
+        published: "19 April 2025",
+        resolution: "Yes",
+        browser: ["Chrome", "Firefox", "Opera", "Safari"],
+        fileIncluded: ["CSS File", "JavaScript File"],
+        layout: "Responsive",
+      },
     ],
     instructions: [
       {
