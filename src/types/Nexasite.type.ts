@@ -8,6 +8,7 @@ export interface InstructionItem {
 export interface CreatorProps {
   id: number;
   name: string;
+  username: string;
   position: string;
   image: string;
   description: string;
@@ -40,6 +41,14 @@ export interface NexasitesProps {
   nameTechStack: string[];
   imageTechStack: string[];
   linkTechStack: string[];
+  information: {
+    lastUpdate: string;
+    published: string;
+    resolution: string;
+    browser: string[];
+    fileIncluded: string[];
+    layout: string;
+  }[];
   nameTool: string[];
   imageTool: string[];
   linkTool: string[];
