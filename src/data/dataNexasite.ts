@@ -11,6 +11,9 @@ const dataNexasite = [
     role: "Frontend",
     url: "https://lynk.id/hafnandigital/0M4lGbY",
     price: 25000,
+    paymentLink: "https://app.sandbox.midtrans.com/payment-links/1745159998611",
+    downloadUrl:
+      "https://drive.google.com/file/d/1PtzwRiVCu_dv67DWRIllwzzOoYfzioIC/view?usp=sharing",
     sale: 2,
     author: "Anugrah Prastyo",
     nameTechStack: ["ReactJS", "TypeScript", "TailwindCSS"],
@@ -134,8 +137,11 @@ const dataNexasite = [
     role: "Frontend",
     url: "https://lynk.id/hafnandigital/0M4lGbY",
     price: 100000,
+    paymentLink: "https://app.sandbox.midtrans.com/payment-links/1745159998611",
+    downloadUrl:
+      "https://drive.google.com/file/d/1PtzwRiVCu_dv67DWRIllwzzOoYfzioIC/view?usp=sharing",
     sale: 8,
-    author: "Ella Mardiah",
+    author: "Anugrah Prastyo",
     nameTechStack: ["ReactJS", "TypeScript", "TailwindCSS"],
     imageTechStack: [
       "/image/techstack/react-js.svg",
