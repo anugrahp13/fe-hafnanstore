@@ -76,8 +76,10 @@ export const Cart = ({ products }: CartProps) => {
             </div>
           </Link>
 
-          <div className="tracking-tight line-clamp-2 mb-3 min-h-[3rem] overflow-hidden">
-            <h3 className="text-2xl font-bold truncate">{product.name}</h3>
+          <div className="tracking-tight line-clamp-2 mt-1 mb-3 min-h-[3rem]">
+            <h3 className="text-2xl font-bold truncate">
+              {product.name}
+            </h3>
             <p className="text-sm">
               by{" "}
               <Link
