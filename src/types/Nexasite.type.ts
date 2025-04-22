@@ -34,6 +34,8 @@ export interface NexasitesProps {
   role: string;
   url: string;
   price: number;
+  paymentLink: string;
+  downloadUrl: string;
   sale: number;
   author: string;
   creator?: CreatorProps;
