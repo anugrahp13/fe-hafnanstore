@@ -15,6 +15,8 @@ import { DetailProduct } from "./pages/detailproduct/DetailProduct";
 import { useNexasiteStore } from "./stores/useDetailProductStore";
 import { HafnanMarts } from "./pages/hafnanmart/HafnanMart";
 import { Creator } from "./pages/creator/Creator";
+import { Download } from "./pages/Download/Download";
+import { PaymentHandler } from "./pages/detailproduct/PaymentHandler";
 
 // Type untuk route params
 type ProductsParams = {
@@ -70,6 +72,9 @@ function App() {
           path="/products/:name/:productSlug"
           element={<ProductDetailPage />}
         />
+        {/* Payment Handling Routes */}
+        <Route path="/payment-handler" element={<PaymentHandler />} />
+        <Route path="/download" element={<Download />} />
 
         <Route path="/creators" element={<Creator />} />
         <Route path="/creator/:username" element={<Creator />} />
