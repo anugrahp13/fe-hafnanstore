@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { DarkModeToggle } from "./elements/DarkModeToggle";
-import { TimeDisplay } from "./elements/TimeDisplay";
 import { Link, useLocation } from "react-router-dom";
 import dataFooter from "../data/dataFooter";
 import { ChevronUp, Menu, X } from "lucide-react";
@@ -126,7 +125,6 @@ const Header = () => {
             </div>
           </nav>
           <div className="flex gap-2 items-center order-2">
-            <TimeDisplay />
             <DarkModeToggle />
           </div>
         </div>
@@ -224,8 +222,9 @@ const Header = () => {
               ))}
             </div>
             <p className="text-left font-semibold text-sm text-slate-800 dark:text-white">
-            © 2025 <span className="font-bold dark:text-white">Hafnan Store</span>.
-            All rights reserved.
+              © 2025{" "}
+              <span className="font-bold dark:text-white">Hafnan Store</span>.
+              All rights reserved.
             </p>
           </div>
         </div>
