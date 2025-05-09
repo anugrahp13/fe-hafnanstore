@@ -15,18 +15,8 @@ const dataFooter = [
         url: "/return-terms",
       },
     ],
-    marketplaces: [
-      {
-        name: "Tokopedia",
-        logo: "/image/marketplace/tokopedia.png",
-        url: "https://www.tokopedia.com/hafnan99",
-      },
-      {
-        name: "Shopee",
-        logo: "/image/marketplace/shopee.png",
-        url: "https://shopee.co.id/hafnanmart",
-      },
-    ],
+    nameMarket: "Shopee",
+    url: "https://shopee.co.id/hafnanmart",
   },
 ];
 
