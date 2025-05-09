@@ -4,7 +4,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { SectionLeft } from "./SectionLeft";
 import { useContactStore } from "../../stores/useContactStore";
 
-
 export const Contact = () => {
   useContactStore();
 
@@ -30,10 +29,7 @@ export const Contact = () => {
                   <div className="text-gray-700 dark:text-white text-left leading-7 space-y-4">
                     <div className="grid gap-2">
                       <p>
-                        <span className="font-bold">Tokopedia :</span> Hafnan99
-                      </p>
-                      <p>
-                        <span className="font-bold">Shopee :</span> Hafnanmart
+                        <span className="font-bold">Shopee :</span> HafnanMart
                       </p>
                     </div>
                     <div className="space-y-2">
