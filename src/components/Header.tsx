@@ -3,6 +3,9 @@ import { DarkModeToggle } from "./elements/DarkModeToggle";
 import { Link, useLocation } from "react-router-dom";
 import dataFooter from "../data/dataFooter";
 import { ChevronUp, Menu, X } from "lucide-react";
+import { TimeDisplay } from "./elements/TimeDisplay";
+import { ButtonMarket } from "./elements/ButtonMarket";
+import { SiShopee } from "react-icons/si";
 
 const Header = () => {
   const [isSidebarMenuOpen, setIsSidebarMenuOpen] = useState(false);
@@ -61,7 +64,6 @@ const Header = () => {
 
   const isActiveLink = (path: string) => pathname === path;
 
-  const marketplaces = dataFooter[0].marketplaces;
   return (
     <>
       <header
@@ -125,6 +127,7 @@ const Header = () => {
             </div>
           </nav>
           <div className="flex gap-2 items-center order-2">
+            <TimeDisplay />
             <DarkModeToggle />
           </div>
         </div>
@@ -171,7 +174,7 @@ const Header = () => {
               onClick={handleMenuClick}
               className="p-2.5 flex items-center text-[15px] rounded-lg px-4 font-bold hover:bg-slate-400/25 text-slate-800 hover:text-primary dark:text-white dark:hover:text-primary"
             >
-              Produk
+              Products
             </Link>
             <Link
               to="/about"
@@ -205,21 +208,14 @@ const Header = () => {
           <hr className="my-2 text-gray-600" />
           <div className="p-2.5 px-4 space-y-4">
             {/* data json untuk marketplace */}
-            <div className="flex gap-4">
-              {marketplaces.map((marketplace) => (
-                <a
-                  key={marketplace.name}
-                  href={marketplace.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={marketplace.logo}
-                    alt={marketplace.name}
-                    className="w-10 h-10"
-                  />
-                </a>
-              ))}
+            <div className="flex text-base gap-4">
+              <ButtonMarket
+                to={dataFooter[0].url}
+                variant="shopee"
+                text="Shopee"
+                icon={SiShopee}
+                iconClassName="w-6 h-6"
+              />
             </div>
             <p className="text-left font-semibold text-sm text-slate-800 dark:text-white">
               © 2025{" "}
