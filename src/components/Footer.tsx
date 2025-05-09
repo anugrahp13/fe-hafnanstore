@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MailCheck } from "lucide-react";
+import { SiShopee } from "react-icons/si";
+import { ButtonMarket } from "./elements/ButtonMarket";
 
 export const Footer = () => {
   const footerData = dataFooter[0];
@@ -84,21 +86,14 @@ export const Footer = () => {
               <h2 className="font-bold text-2xl text-white uppercase">
                 {footerData.available}
               </h2>
-              <div className="flex justify-center gap-4 mt-2">
-                {footerData.marketplaces.map((marketplace, index) => (
-                  <a
-                    key={index}
-                    href={marketplace.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={marketplace.logo}
-                      alt={marketplace.name}
-                      className="w-10 h-10"
-                    />
-                  </a>
-                ))}
+              <div className="flex justify-center mt-2">
+                <ButtonMarket
+                  to={footerData.url}
+                  variant="shopee"
+                  text="Shopee"
+                  icon={SiShopee}
+                  iconClassName="w-6 h-6"
+                />
               </div>
             </div>
 
