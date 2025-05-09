@@ -43,7 +43,7 @@ export const DetailProduct = () => {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>{product.name} | Portfolio Anugrah Prastyo</title>
+          <title>{product.name} - Hafnan Store</title>
         </Helmet>
       </HelmetProvider>
       <section className="my-32 dark:bg-dark">
