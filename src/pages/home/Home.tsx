@@ -33,9 +33,11 @@ export const Home = () => {
     const selectedHafnandigitalIds = [1, 2, 3, 4, 5, 6];
 
     //Filter hafnanmart berdasarkan ID yang dipilih
-    const filteredHafnanMarts = dataHafnanMart.filter((hafnanmart) =>
-      selectedHafnanmartIds.includes(hafnanmart.id)
-    );
+    const filteredHafnanMarts = dataHafnanMart
+      .filter((hafnanmart) => selectedHafnanmartIds.includes(hafnanmart.id))
+      .map((item) => ({
+        ...item,
+      }));
 
     //Filter hafnandigital berdasarkan ID yang dipilih
     const filteredHafnanDigital = dataHafnanDigital.filter((hafnandigital) =>
@@ -58,7 +60,7 @@ export const Home = () => {
       <section className="dark:bg-dark">
         <div className="relative">
           <img
-            src="/image/banner/banner.png"
+            src="/image/banner/banner.webp"
             alt="Banner Hafnan Store"
             className="w-full pt-[3.8rem] h-[41rem] object-cover"
           />
@@ -99,7 +101,7 @@ export const Home = () => {
               <div className="flex items-center gap-2">
                 <picture>
                   <img
-                    src="/image/avatar/hafnanmart.png"
+                    src="/image/avatar/hafnanmart.webp"
                     data-size="auto"
                     alt="Logo - HafnanMart"
                     className="lazyload rounded-full object-cover max-w-full w-10 h-10 dark:brightness-75 lazyloaded"
@@ -149,7 +151,7 @@ export const Home = () => {
               <div className="flex items-center gap-2">
                 <picture>
                   <img
-                    src="/image/avatar/hafnandigital.png"
+                    src="/image/avatar/hafnandigital.webp"
                     data-size="auto"
                     alt="Logo - HafnanMart"
                     className="lazyload rounded-full object-cover max-w-full w-10 h-10 dark:brightness-75 lazyloaded"
