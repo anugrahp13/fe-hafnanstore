@@ -1,7 +1,8 @@
 // components/Cart.tsx
-import { useEffect, useState } from 'react';
-import { LoaderCircle } from 'lucide-react';
-import { HafnanMartsProps } from '../../types/HafnanMart.type';
+import { useEffect, useState } from "react";
+import { LoaderCircle } from "lucide-react";
+import { HafnanMartsProps } from "../../types/HafnanMart.type";
+import { ButtonMarket } from "../../components/elements/ButtonMarket";
 
 interface CartProps {
   products: HafnanMartsProps[];
@@ -28,8 +29,10 @@ export const Cart = ({ products }: CartProps) => {
   }
 
   if (!Array.isArray(products)) {
-    console.error('Error: products bukan array!', products);
-    return <p className="text-red-500">Terjadi kesalahan dalam memuat produk.</p>;
+    console.error("Error: products bukan array!", products);
+    return (
+      <p className="text-red-500">Terjadi kesalahan dalam memuat produk.</p>
+    );
   }
 
   if (products.length === 0) {
@@ -56,10 +59,12 @@ export const Cart = ({ products }: CartProps) => {
             <div className="relative w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-xl overflow-hidden">
               <picture>
                 <img
-                  src={product.image || '/image/avatar/404.png'}
+                  src={product.image || "/image/avatar/404.png"}
                   alt={`Thumbnails - ${product.name}`}
                   className="lazyload w-full rounded-xl object-cover max-w-full brightness-90 dark:brightness-100 transition-transform hover:scale-110"
-                  onError={(e) => (e.currentTarget.src = '/image/avatar/404.png')}
+                  onError={(e) =>
+                    (e.currentTarget.src = "/image/avatar/404.png")
+                  }
                 />
               </picture>
             </div>
@@ -70,17 +75,16 @@ export const Cart = ({ products }: CartProps) => {
           <div className="text-xl lg:text-lg font-bold tracking-tight line-clamp-2 mb-3 min-h-[3rem]">
             <span>{product.name}</span>
           </div>
-          <div className="flex flex-wrap justify-center items-center text-sm gap-4">
+          <div className="flex flex-wrap justify-center items-center text-sm gap-2">
             {product.marketplaces.map((marketplace) => (
-              <a href={marketplace.url} key={marketplace.name} target="_blank">
-                <picture>
-                  <img
-                    src={marketplace.logo}
-                    alt={marketplace.name}
-                    className="rounded-xl object-cover max-w-full w-10 h-10 lg:w-7 lg:h-7"
-                  />
-                </picture>
-              </a>
+              <ButtonMarket
+                key={marketplace.name}
+                href={marketplace.url}
+                icon={marketplace.icon}
+                variant={marketplace.name === "Shopee" ? "shopee" : "whatsApp"}
+                text={marketplace.name}
+                iconClassName="w-[1.10rem] h-[1.10rem]"
+              />
             ))}
           </div>
         </div>
