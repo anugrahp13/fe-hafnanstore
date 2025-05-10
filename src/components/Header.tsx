@@ -214,7 +214,7 @@ const Header = () => {
                 variant="shopee"
                 text="Shopee"
                 icon={SiShopee}
-                iconClassName="w-6 h-6"
+                iconClassName="w-[1.10rem] h-[1.10rem]"
               />
             </div>
             <p className="text-left font-semibold text-sm text-slate-800 dark:text-white">
