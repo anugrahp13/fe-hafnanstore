@@ -57,7 +57,7 @@ export const DetailProduct = () => {
                 <div className="text-4xl font-bold">{product.name}</div>
                 <div className="flex justify-between items-center text-base text-gray-600 gap-2">
                   <div className="flex justify-center items-center dark:text-white gap-4">
-                    <p>
+                    <p className="hidden md:block">
                       by{" "}
                       <Link
                         to={
