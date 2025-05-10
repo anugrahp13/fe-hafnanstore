@@ -54,7 +54,7 @@ export const About = () => {
               <img
                 src={dataAbout.banner.src}
                 alt={dataAbout.banner.alt}
-                className="w-full max-h-[41rem] object-contain rounded-3xl"
+                className="w-full min-h-auto object-contain rounded-3xl"
               />
             </picture>
             <div className="flex flex-col md:flex-row gap-10">
