@@ -17,7 +17,7 @@ export const SocialMedia: React.FC<SocialMediaProps> = ({
   };
 
   const defaultStyle =
-    "w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:text-white hover:bg-primary dark:border-white hover:dark:border-primary";
+    "w-10 h-10 rounded-full flex justify-center items-center border bg-primary border-primary text-white hover:border-primary hover:text-white hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out";
 
   return (
     <button onClick={handleClick} className={defaultStyle}>
